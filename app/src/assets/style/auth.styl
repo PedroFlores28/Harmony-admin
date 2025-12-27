@@ -1,0 +1,1006 @@
+// Prevenir scroll en móvil solo para páginas de autenticación
+@media (max-width: 768px)
+  .auth html, .auth body
+    height 100vh !important
+    max-height 100vh !important
+    overflow hidden !important
+    position fixed !important
+    width 100% !important
+
+.auth
+  // _grid()
+  height 100vh
+  max-height 100vh
+  overflow hidden
+  padding 0
+  display flex
+  align-items stretch
+  // justify-content center
+
+  &::before
+    content ''
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100vh
+    background url('assets/img/logo/inicio.svg') no-repeat center center / cover
+    z-index 1
+
+  >section
+    position absolute
+    top 0
+    left 0
+    width 50%
+    height 100vh
+    z-index 2
+    display flex
+    justify-content center
+    align-items center
+    padding 0
+
+  // Responsive design
+  @media (max-width: 1024px)
+    &::before
+      display none
+      
+    >section
+      position relative
+      width 100%
+      background transparent
+      backdrop-filter none
+      
+  @media (max-width: 768px)
+    flex-direction column !important
+    height 100vh !important
+    min-height 100vh !important
+    max-height 100vh !important
+    overflow hidden !important
+    position fixed !important
+    top 0 !important
+    left 0 !important
+    right 0 !important
+    bottom 0 !important
+    width 100vw !important
+    max-width 100vw !important
+    min-width 100vw !important
+    padding 0 !important
+    margin 0 !important
+    box-sizing border-box !important
+    
+    &::before
+      display none !important
+      
+    &::after
+      display none !important
+    
+    // RECONSTRUCCIÓN COMPLETA DISEÑO MÓVIL
+    >section#content-auth
+      position absolute !important
+      top 0 !important
+      left 0 !important
+      right 0 !important
+      width 100vw !important
+      max-width 100vw !important
+      min-width 100vw !important
+      height 100vh !important
+      background url('assets/img/logo/iphone-inicio-cell.svg') no-repeat top center !important
+      background-position top -60px center !important
+      backdrop-filter none !important
+      z-index 1 !important
+      overflow visible !important
+      border-radius 0 !important
+      display flex !important
+      flex-direction column !important
+      justify-content flex-end !important
+      padding 0 !important
+      margin 0 !important
+      box-sizing border-box !important
+      
+      .content
+        width 100vw !important
+        max-width 100vw !important
+        min-width 100vw !important
+        margin-top auto !important
+        background none !important
+        padding 0 !important
+        margin 0 !important
+        box-sizing border-box !important
+        
+        .form
+          background none !important
+          background-color transparent !important
+          display flex !important
+          position relative !important
+          z-index 2 !important
+          width 100vw !important
+          max-width 100vw !important
+          min-width 100vw !important
+          height auto !important
+          padding 20px !important
+          margin 0 !important
+          border-radius 0 !important
+          overflow-y auto !important
+          flex-direction column !important
+          justify-content flex-start !important
+          box-shadow none !important
+          backdrop-filter none !important
+          box-sizing border-box !important
+      
+    // También aplicar a section general por si acaso
+    >section
+      position absolute !important
+      top 0 !important
+      left 0 !important
+      right 0 !important
+      width 100vw !important
+      max-width 100vw !important
+      min-width 100vw !important
+      height 100vh !important
+      background url('assets/img/logo/iphone-inicio-cell.svg') no-repeat top center !important
+      background-size contain !important
+      background-position top center !important
+      backdrop-filter none !important
+      z-index 1 !important
+      overflow visible !important
+      border-radius 0 !important
+      display flex !important
+      flex-direction column !important
+      justify-content flex-end !important
+      padding 0 !important
+      margin 0 !important
+      box-sizing border-box !important
+      
+      .content
+        width 100vw !important
+        max-width 100vw !important
+        min-width 100vw !important
+        margin-top auto !important
+        background none !important
+        padding 0 !important
+        margin 0 !important
+        box-sizing border-box !important
+        
+        .form
+          background none !important
+          background-color transparent !important
+          display flex !important
+          position relative !important
+          z-index 2 !important
+          width 100vw !important
+          max-width 100vw !important
+          min-width 100vw !important
+          height auto !important
+          padding 20px !important
+          margin 0 !important
+          border-radius 0 !important
+          overflow-y auto !important
+          flex-direction column !important
+          justify-content flex-start !important
+          box-shadow none !important
+          backdrop-filter none !important
+          box-sizing border-box !important
+      
+  // Estilos específicos para la página de registro en móvil
+  @media (max-width: 768px)
+    &.register-page
+      overflow-y auto !important
+      overflow-x hidden !important
+      height 100vh !important
+      position relative !important
+      
+      &::before
+        display none !important
+        
+      &::after
+        display none !important
+      
+      // RECONSTRUCCIÓN COMPLETA REGISTRO MÓVIL
+      >section#content-auth
+        position relative !important
+        top 0 !important
+        left 0 !important
+        right 0 !important
+        width 100vw !important
+        max-width 100vw !important
+        min-width 100vw !important
+        min-height 100vh !important
+        height auto !important
+        background url('assets/img/logo/iphone-registro-cell.svg') no-repeat top center !important
+        background-position top center !important
+        backdrop-filter none !important
+        z-index 1 !important
+        overflow-y auto !important
+        overflow-x hidden !important
+        border-radius 0 !important
+        display flex !important
+        flex-direction column !important
+        justify-content flex-start !important
+        padding 0 !important
+        margin 0 !important
+        box-sizing border-box !important
+        
+        .content
+          width 100vw !important
+          max-width 100vw !important
+          min-width 100vw !important
+          margin-top 30vh !important
+          background none !important
+          padding 0 !important
+          margin-left 0 !important
+          margin-right 0 !important
+          box-sizing border-box !important
+          
+          .form
+            background none !important
+            background-color transparent !important
+            display flex !important
+            position relative !important
+            z-index 2 !important
+            width 100vw !important
+            max-width 100vw !important
+            min-width 100vw !important
+            height auto !important
+            padding 20px !important
+            margin 0 !important
+            border-radius 0 !important
+            overflow visible !important
+            flex-direction column !important
+            justify-content flex-start !important
+            box-shadow none !important
+            backdrop-filter none !important
+            box-sizing border-box !important
+      
+      >section
+        position relative !important
+        top 0 !important
+        left 0 !important
+        right 0 !important
+        width 100vw !important
+        max-width 100vw !important
+        min-width 100vw !important
+        min-height 100vh !important
+        height auto !important
+        background url('assets/img/logo/iphone-registro-cell.svg') no-repeat top center !important
+        background-size 100% 100% !important
+        background-position top center !important
+        backdrop-filter none !important
+        z-index 1 !important
+        overflow-y auto !important
+        overflow-x hidden !important
+        border-radius 0 !important
+        display flex !important
+        flex-direction column !important
+        justify-content flex-start !important
+        padding 0 !important
+        margin 0 !important
+        box-sizing border-box !important
+        
+        .content
+          width 100vw !important
+          max-width 100vw !important
+          min-width 100vw !important
+          margin-top 30vh !important
+          background none !important
+          padding 0 !important
+          margin 0 !important
+          box-sizing border-box !important
+          
+          .form
+            background none !important
+            background-color transparent !important
+            display flex !important
+            position relative !important
+            z-index 2 !important
+            width 100vw !important
+            max-width 100vw !important
+            min-width 100vw !important
+            height auto !important
+            padding 20px !important
+            margin 0 !important
+            border-radius 0 !important
+            overflow visible !important
+            flex-direction column !important
+            justify-content flex-start !important
+            box-shadow none !important
+            backdrop-filter none !important
+            box-sizing border-box !important
+        
+      // Mostrar pestañas como en la imagen - diseño simple con subrayado
+      .auth-tabs
+        display flex !important
+        position fixed !important
+        top calc(20vh + 10px) !important
+        left 50% !important
+        transform translateX(-50%) !important
+        z-index 1001 !important
+        background-color transparent !important
+        border-radius 0 !important
+        width fit-content !important
+        box-shadow none !important
+        gap 20px !important
+        
+        .tab
+          width 170px !important
+          height 70px !important
+          padding 12px 0 !important
+          text-decoration none !important
+          color #999 !important
+          font-weight 600 !important
+          font-size 16px !important
+          background-color transparent !important
+          display flex !important
+          align-items center !important
+          justify-content center !important
+          border-radius 0 !important
+          border none !important
+          border-bottom 2px solid #ddd !important
+          position relative !important
+          transition all 0.3s ease !important
+          
+          &.active
+            background-color transparent !important
+            color #021F59 !important
+            border-bottom 2px solid #05C7F2 !important
+            font-weight bold !important
+            
+          &:hover
+            color #021F59 !important
+  .welcome-title-form
+    text-align center
+    margin 25px 0 60px 0
+    
+    h1
+      font-size 32px
+      font-weight bold
+      color #3B3B3B
+      margin 0
+      font-family 'Open Sans', sans-serif
+      
+    // Responsive
+    @media (max-width: 768px)
+      margin 10px 0 15px 0
+      
+      h1
+        font-size 20px
+        
+    @media (max-width: 480px)
+      margin 8px 0 12px 0
+      
+      h1
+        font-size 18px
+        
+    @media (max-width: 375px)
+      margin 6px 0 10px 0
+      
+      h1
+        font-size 16px
+
+  .register-form-container
+    // Contenedor invisible que solo agrupa elementos sin afectar la visualización
+    
+    // En desktop, subir ligeramente el formulario
+    @media (min-width: 1025px)
+      margin-top -20px
+  .register-title-form
+    text-align center
+    margin 25px 0 30px 0
+    
+    h1
+      font-size 32px
+      font-weight bold
+      color #3B3B3B
+      margin 0
+      font-family 'Open Sans', sans-serif
+      
+    // Responsive
+    @media (max-width: 768px)
+      display none !important
+        
+    @media (max-width: 480px)
+      display none !important
+
+  // Estilos para el nuevo formulario de registro
+  .form-field
+    position relative
+    margin-bottom 15px
+    
+    // Responsive
+    @media (max-width: 768px)
+      margin-bottom 10px
+      
+    @media (max-width: 480px)
+      margin-bottom 8px
+      
+    @media (max-width: 375px)
+      margin-bottom 6px
+    
+  .form-row
+    display flex
+    gap 15px
+    justify-content center
+    width 80%
+    max-width 509px
+    margin 0 auto
+    
+    &:first-of-type
+      margin-top -10px
+    
+    .form-field
+      flex 1
+      max-width 250px
+      
+      
+    .input-register-new
+      width 100%
+      max-width 250px
+      
+    // Responsive
+    @media (max-width: 768px)
+      width 90%
+      max-width 400px
+      gap 10px
+      
+      .form-field
+        max-width 180px
+        
+      .input-register-new
+        max-width 180px
+        border-radius 0
+        
+    @media (max-width: 480px)
+      flex-direction row
+      gap 8px
+      width 95%
+      max-width 350px
+      
+      .form-field
+        flex 1
+        max-width 48%
+        
+      .input-register-new
+        max-width 100%
+        border-radius 0
+        font-size 12px
+        padding 5px 6px
+        height 32px
+        
+    @media (max-width: 375px)
+      gap 6px
+      width 95%
+      max-width 300px
+      
+      .form-field
+        flex 1
+        max-width 47%
+        
+      .input-register-new
+        max-width 100%
+        border-radius 0
+        font-size 11px
+        padding 4px 5px
+        height 28px
+      
+  .input-register-new
+    width 80%
+    max-width 509px
+    padding 10px 16px
+    height 45px
+    border 2px solid #0476D9
+    border-radius 0
+    font-size 14px
+    font-family 'Open Sans', sans-serif
+    background white
+    color #89888D
+    transition all 0.3s ease
+    
+    &:focus
+      outline none
+      border-color #0476D9
+      box-shadow 0 0 0 3px rgba(4, 118, 217, 0.1)
+      
+    // Responsive
+    @media (max-width: 768px)
+      width 90%
+      max-width 400px
+      font-size 15px
+      padding 8px 10px
+      margin-bottom 12px
+      border-radius 0
+      height 42px
+      
+    @media (max-width: 480px)
+      width 95%
+      max-width 350px
+      padding 6px 8px
+      margin-bottom 4px
+      font-size 14px
+      border-radius 0
+      height 30px
+      
+    @media (max-width: 375px)
+      width 95%
+      max-width 320px
+      padding 4px 5px
+      margin-bottom 8px
+      font-size 12px
+      border-radius 0
+      height 30px
+      
+    &::placeholder
+      color #999
+      
+    &.error
+      border-color #e74c3c
+
+      
+  .select-field
+    appearance none
+    background-image url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2305AFF2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e")
+    background-repeat no-repeat
+    background-position right 12px center
+    background-size 16px
+    padding-right 40px
+    
+    
+  .checkbox-field
+    margin-top -16px
+    display flex
+    justify-content flex-start
+    width 80%
+    max-width 509px
+    margin-left auto
+    margin-right auto
+    
+    // Responsive
+    @media (max-width: 768px)
+      width 90%
+      max-width 400px
+      
+    @media (max-width: 480px)
+      width 95%
+      max-width 350px
+    
+  .terms-field
+
+    display flex
+    justify-content center
+    width 80%
+    max-width 509px
+    margin-left auto
+    margin-right auto
+    
+    // Responsive
+    @media (max-width: 768px)
+      width 90%
+      max-width 400px
+      
+    @media (max-width: 480px)
+      width 95%
+      max-width 350px
+    
+  .checkbox-label
+    display flex
+    align-items center
+    gap 8px
+    cursor pointer
+    
+  .checkbox-input
+    width 16px
+    height 16px
+    border 2px solid #0339A6
+    border-radius 3px
+    background white
+    cursor pointer
+    appearance none
+    -webkit-appearance none
+    -moz-appearance none
+    
+    &:checked
+      background-color #0339A6
+      border-color #0339A6
+      background-image url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 011.414-1.414L4.5 10.586l6.293-6.293a1 1 0 011.414 0z'/%3e%3c/svg%3e")
+      background-size 12px 12px
+      background-position center center
+      background-repeat no-repeat
+    
+  .checkbox-text
+    color #666C68
+    font-size 14px
+    font-family 'Open Sans', sans-serif
+    
+  .register-button
+    width 80%
+    max-width 509px
+    height 56px
+    padding 12px 15px 18px 15px
+    background #021F59
+    color #FFFFFF
+    border none
+    border-radius 0
+    font-size 21px
+    font-weight bold
+    font-family 'Open Sans', sans-serif
+    cursor pointer
+    transition all 0.3s ease
+    margin-bottom 20px
+    margin-left auto
+    margin-right auto
+    
+    // Responsive
+    @media (max-width: 768px)
+      width 90%
+      max-width 400px
+      height 42px
+      padding 10px
+      margin-bottom 12px
+      border-radius 25px !important
+      font-size 15px
+      
+    @media (max-width: 480px)
+      width 95%
+      max-width 350px
+      height 38px
+      font-size 14px
+      padding 8px
+      margin-bottom 10px
+      border-radius 20px !important
+      
+    @media (max-width: 375px)
+      width 95%
+      max-width 320px
+      height 35px
+      font-size 13px
+      padding 6px
+      margin-bottom 8px
+      border-radius 18px !important
+    
+    &:hover
+      background #033a8a
+      
+    &:disabled
+      background #ccc
+      cursor not-allowed
+      
+  .login-link
+    text-align center
+    margin-top 8px
+    
+    // Responsive
+    @media (max-width: 768px)
+      margin-bottom 12px
+      
+    @media (max-width: 480px)
+      margin-bottom 10px
+      
+    @media (max-width: 375px)
+      margin-bottom 8px
+    
+    small
+      color #666
+      font-size 14px
+      
+      // Responsive
+      @media (max-width: 768px)
+        font-size 13px
+        
+      @media (max-width: 480px)
+        font-size 12px
+        
+      @media (max-width: 375px)
+        font-size 11px
+      
+      a
+        color #0476D9
+        text-decoration none
+        
+        &:hover
+          text-decoration underline
+          
+  .social-icons
+    display flex
+    justify-content center
+    gap 10px
+    margin-top 15px
+    
+    // Responsive
+    @media (max-width: 768px)
+      margin-top 12px
+      gap 8px
+      
+    @media (max-width: 480px)
+      margin-top 10px
+      gap 6px
+      
+    @media (max-width: 375px)
+      margin-top 8px
+      gap 5px
+    
+  .social-icon
+    width 40px
+    height 40px
+    border-radius 50%
+    display flex
+    align-items center
+    justify-content center
+    text-decoration none
+    transition all 0.3s ease
+    box-shadow none
+    
+    // Responsive
+    @media (max-width: 768px)
+      width 35px
+      height 35px
+      
+    @media (max-width: 480px)
+      width 32px
+      height 32px
+      
+    @media (max-width: 375px)
+      width 30px
+      height 30px
+    
+    i
+      font-size 18px
+      color white
+      
+      // Responsive
+      @media (max-width: 768px)
+        font-size 16px
+        
+      @media (max-width: 480px)
+        font-size 14px
+        
+      @media (max-width: 375px)
+        font-size 12px
+      
+      
+    &:hover
+      transform translateY(-2px)
+
+
+  .social
+    // Margin top adicional para móvil en registro
+    @media (max-width: 768px)
+      margin-left: 15px;
+    
+    @media (max-width: 480px)
+      margin-left: 15px;
+      
+    @media (max-width: 375px)
+      margin-top -30px 
+      margin-left: 15px;
+    
+    // En desktop, reducir margen superior para login
+    @media (min-width: 1025px)
+      margin-top -50px
+      margin-left -18px
+    
+    a
+      padding 12px
+      Top 4.15px
+      Left 1.25px
+
+      // color c-main-light-green
+      // color c-main-purple
+      
+      color  #fff;
+
+  .social-icon-register {
+  
+  margin-right: 10px; /* Espaciado entre íconos */
+  display: inline-block; /* Asegura que los íconos se alineen correctamente */
+  width: 26px; /* Ajusta el tamaño según sea necesario */
+  height: 26px; /* Ajusta el tamaño según sea necesario */
+  border-radius: 8px; /* Bordes redondeados */
+  }
+
+  .social-icon {
+  margin-right: 25px; /* Espaciado entre íconos */
+  display: inline-block; /* Asegura que los íconos se alineen correctamente */
+  width: 40px; /* Ajusta el tamaño según sea necesario */
+  height: 40px; /* Ajusta el tamaño según sea necesario */
+  border-radius: 13px; /* Bordes redondeados */
+  
+  &:last-child {
+    margin-right: 0; /* Sin margen en el último icono */
+  }
+}
+
+  // >header
+  //   flex 1
+  //   text-align center
+  //   display none
+  //   .social
+  //     a
+  //       background c-main-golden
+  //       color c-main-red
+  //       font-size 20px
+  //       padding 12px
+  //       margin 8px
+  //       border-radius 50%
+  //       width 44px
+  //       height 44px
+
+  >section
+    // width 100%
+    // align-self center
+    width 50%
+    height 100vh
+    display flex
+    justify-content center
+    align-items center
+    padding 0
+    
+    // En móvil, ancho completo
+    @media (max-width: 768px)
+      width 100% !important
+      max-width 100% !important
+      left 0 !important
+      right 0 !important
+      padding 0 !important
+      margin 0 !important
+
+
+    .content
+      max-width 100%
+      width 100%
+      margin 0
+
+
+      .form
+        // background c-ligh-gray
+        background white
+        border-radius 0
+        // border solid 1.5px c-main-blue
+        // border solid 2px c-main-golden
+        // border solid 2px c-main-light-green
+        // border solid 2px c-main-purple
+        padding 16px
+        margin-top -58px
+        Width 100%
+        max-width 450px
+        height 100vh
+        max-height 100vh
+        display flex
+        flex-direction column
+        justify-content center
+        overflow hidden
+        header
+        section
+          text-align center
+        
+        // En desktop, fondo transparente para que se vea la imagen SVG de fondo
+        @media (min-width: 1025px)
+          background transparent
+          margin-top 0
+          max-width 100%
+          height 100vh
+          max-height 100vh
+          overflow hidden
+      .links
+        _flex()
+        justify-content center
+        padding 0 4px
+
+.text-header
+  display flex 
+  align-items center  
+  gap 20px
+  padding 12px
+
+@media (min-width: d-break)
+  .text-header
+    display none
+
+@media (max-width: 1260px)
+  .auth
+    >section
+      width 100% !important
+      max-width 100% !important
+      
+      .form
+        max-width 100%
+        max-height: 590px;
+@media (max-width: 1260px)
+  .auth
+    flex-direction column
+
+  // >footer
+  //   text-align right
+
+
+// @media (min-width: d-break)
+//   .auth
+//     >header
+//       display block
+//       flex 1
+//       text-align center
+//     >section
+//       .content
+//         margin initial
+
+// ============================================
+// ESTILOS MOBILE PARA REGISTRO (COMPLETAMENTE SEPARADOS DEL DESKTOP)
+// ============================================
+@media (max-width: 768px)
+  .auth.register-page
+    .register-form-container
+      // Contenedor mobile - reset completo
+      width 100%
+      padding 0 20px
+      margin 0
+      
+      .register-title-form
+        display block
+        margin 0 0 20px 0
+        text-align center
+        
+        h1
+          font-size 24px
+          margin 0
+      
+      .form-field
+        width 100%
+        margin-bottom 12px
+        
+        .input-container
+          width 100%
+          
+          .input-register-new
+            width 100%
+            max-width 100%
+            margin 0
+            
+      .form-row
+        flex-direction column
+        width 100%
+        gap 12px
+        margin 0
+        
+        .form-field
+          width 100%
+          margin-bottom 0
+          
+          .input-container
+            width 100%
+            
+            .input-register-new
+              width 100%
+              max-width 100%
+      
+      .checkbox-field
+        width 100%
+        margin 10px 0
+        
+      .terms-field
+        width 100%
+        margin 10px 0
+        
+      .alert-message
+        width 100%
+        max-width 100%
+        margin 10px 0
+        
+      .register-button
+        width 100%
+        max-width 100%
+        margin 15px 0
+        
+      .social
+        width 100%
+        margin 20px 0 10px 0
+        display flex
+        justify-content center
+        align-items center
+        gap 15px
+        
+        .social-icon
+          margin 0
+          
+      .login-link
+        width 100%
+        text-align center
+        margin 10px 0
+
+
