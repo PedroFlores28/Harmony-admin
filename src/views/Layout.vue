@@ -4,7 +4,7 @@
     <nav class="navbar is-spaced modern-navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item logo-container">
+          <a class="navbar-item logo-container" style="display: none;">
             <img src="@/assets/logo.svg" class="logo" />
           </a>
           <a
@@ -521,7 +521,7 @@ export default {
 <style scoped>
 /* Modern Navigation Styles */
 .modern-navbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #021F59;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   border-bottom: none;
   min-height: 4.5rem;
