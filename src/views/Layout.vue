@@ -4,9 +4,6 @@
     <nav class="navbar is-spaced modern-navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item logo-container" style="display: none;">
-            <img src="@/assets/logo.svg" class="logo" />
-          </a>
           <a
             class="navbar-burger burger"
             :class="{ 'is-active': open }"
@@ -521,7 +518,7 @@ export default {
 <style scoped>
 /* Modern Navigation Styles */
 .modern-navbar {
-  background: #021F59;
+  background: #450B2B;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   border-bottom: none;
   min-height: 4.5rem;
@@ -663,7 +660,7 @@ export default {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #450B2B 0%, #5C0F39 100%);
   border: none;
   color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -710,7 +707,7 @@ export default {
 
 @media (max-width: 1023px) {
   .modern-navbar .navbar-menu {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #450B2B 0%, #5C0F39 100%);
     border-radius: 0 0 12px 12px;
     max-height: calc(100vh - 4.5rem);
     overflow-y: auto;
@@ -920,7 +917,7 @@ export default {
 }
 
 .menu-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #450B2B 0%, #5C0F39 100%);
   color: white;
   padding: 20px;
   display: flex;
@@ -977,7 +974,7 @@ export default {
   background: #f8f9fa;
   border-color: #e9ecef;
   transform: translateX(5px);
-  color: #007bff;
+  color: #5C0F39;
 }
 
 .menu-item .icon {
@@ -987,7 +984,7 @@ export default {
 }
 
 .menu-item:hover .icon {
-  color: #007bff;
+  color: #5C0F39;
 }
 
 /* Animations */
