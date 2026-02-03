@@ -87,6 +87,7 @@
               <tr>
                 <th>#</th>
                 <th>Cuenta</th>
+                <th>CCI</th>
                 <th>Titular</th>
                 <th>Banco</th>
                 <th>Tipo</th>
@@ -105,6 +106,11 @@
                 <td>
                   <div class="account-info">
                     <span class="account-number">{{ method.cuenta }}</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="cci-info">
+                    <span class="cci-number">{{ method.cci || '-' }}</span>
                   </div>
                 </td>
                 <td>
@@ -219,6 +225,19 @@
                   />
                 </div>
                 <p class="help">Número de cuenta bancaria, tarjeta o referencia de pago</p>
+              </div>
+
+              <div class="field">
+                <label class="label">CCI</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    v-model="currentMethod.cci"
+                    placeholder="Código de Cuenta Interbancario"
+                  />
+                </div>
+                <p class="help">Código de Cuenta Interbancario (opcional)</p>
               </div>
 
               <div class="field">
@@ -360,6 +379,7 @@ export default {
       showEditModal: false,
       currentMethod: {
         cuenta: "",
+        cci: "",
         titular: "",
         banco: "",
         tipo: "",
@@ -449,6 +469,7 @@ export default {
     resetForm() {
       this.currentMethod = {
         cuenta: "",
+        cci: "",
         titular: "",
         banco: "",
         tipo: "",
