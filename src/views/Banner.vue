@@ -150,16 +150,12 @@ export default {
       // File storage for activation banners
       activationSelectedFiles: {
         left: null,
-        centerTop: null,
-        centerBottom: null,
         right: null,
       },
 
       // Sending states for activation banners
       activationSendingStates: {
         left: false,
-        centerTop: false,
-        centerBottom: false,
         right: false,
       },
 
@@ -218,24 +214,6 @@ export default {
           description: "Banner principal de la tienda (más ancho)",
           dimensions: "600 x 400 px",
           position: "left"
-        },
-        {
-          id: "activation_banners",
-          img: this.activationBannersData.centerTop || "",
-          url: this.activationBannersData.centerTopUrl || "",
-          title: "Banner Centro Arriba",
-          description: "Banner superior del centro",
-          dimensions: "300 x 190 px",
-          position: "centerTop"
-        },
-        {
-          id: "activation_banners",
-          img: this.activationBannersData.centerBottom || "",
-          url: this.activationBannersData.centerBottomUrl || "",
-          title: "Banner Centro Abajo",
-          description: "Banner inferior del centro",
-          dimensions: "300 x 190 px",
-          position: "centerBottom"
         },
         {
           id: "activation_banners",
