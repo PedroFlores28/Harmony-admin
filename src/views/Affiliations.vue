@@ -1266,6 +1266,7 @@ export default {
         } else {
           affiliation.status = "approved";
         }
+        await this.GET(this.$route.params.filter);
       } catch (error) {
         console.error("Error approving affiliation:", error);
       } finally {
@@ -1285,6 +1286,7 @@ export default {
         });
 
         affiliation.status = "rejected";
+        await this.GET(this.$route.params.filter);
       } catch (error) {
         console.error("Error rejecting affiliation:", error);
       } finally {
@@ -1677,16 +1679,9 @@ export default {
           action: "revert",
           id: affiliation.id,
         });
-        console.log("Respuesta de revert:", data);
         if (data && data.error === false) {
-          // Eliminar de la lista local
-          this.affiliations = this.affiliations.filter(
-            (a) => a.id !== affiliation.id
-          );
-          this.allAffiliations = this.allAffiliations.filter(
-            (a) => a.id !== affiliation.id
-          );
           this.$toast.success("Afiliación eliminada correctamente");
+          await this.GET(this.$route.params.filter);
         } else {
           this.$toast.error(
             (data && data.msg) || "No se pudo eliminar la afiliación"
