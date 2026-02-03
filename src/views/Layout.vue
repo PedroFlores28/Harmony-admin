@@ -163,16 +163,6 @@
               </a>
 
               <!-- Flyers -->
-              <a
-                class="navbar-item"
-                href="/flyers"
-                v-if="accountType === 'admin'"
-              >
-                <span class="icon">
-                  <i class="fas fa-file-image"></i>
-                </span>
-                <span>Flyers</span>
-              </a>
 
               <!-- Network -->
               <a
