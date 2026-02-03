@@ -195,6 +195,10 @@
                 <span>{{ selected_office.accounts }}</span>
               </div>
               <div class="info-item">
+                <label>CCI:</label>
+                <span>{{ selected_office.cci || 'No disponible' }}</span>
+              </div>
+              <div class="info-item">
                 <label>Horario:</label>
                 <span>{{ selected_office.horario || 'No disponible' }}</span>
               </div>
