@@ -227,8 +227,8 @@ export default {
           img: this.activationBannersData.left || "",
           url: this.activationBannersData.leftUrl || "",
           title: "Banner Izquierda",
-          description: "Banner principal de la tienda (más ancho)",
-          dimensions: "600 x 400 px",
+          description: "Banner principal de la tienda",
+          dimensions: "500 x 400 px",
           position: "left"
         },
         {
@@ -236,8 +236,8 @@ export default {
           img: this.activationBannersData.right || "",
           url: this.activationBannersData.rightUrl || "",
           title: "Banner Derecha",
-          description: "Banner lateral derecho (cuadrado)",
-          dimensions: "400 x 400 px",
+          description: "Banner lateral derecho",
+          dimensions: "500 x 400 px",
           position: "right"
         }
       ];
