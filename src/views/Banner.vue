@@ -56,11 +56,11 @@
             </button>
             <button
               class="tab-button"
-              :class="{ active: activeTab === 'affiliation' }"
-              @click="activeTab = 'affiliation'"
+              :class="{ active: activeTab === 'rank' }"
+              @click="activeTab = 'rank'"
             >
-              <i class="fas fa-id-badge"></i>
-              <span>Banners Afiliación</span>
+              <i class="fas fa-gem"></i>
+              <span>Imágenes de Rangos</span>
             </button>
           </div>
         </div>
@@ -94,16 +94,16 @@
           />
         </div>
 
-        <!-- Affiliation Banners -->
-        <div v-if="activeTab === 'affiliation'" class="banner-grid">
+        <!-- Rank Images -->
+        <div v-if="activeTab === 'rank'" class="banner-grid">
           <BannerCard
-            v-for="(banner, index) in affiliationBanners"
-            :key="'affiliation-' + index"
+            v-for="(banner, index) in rankImages"
+            :key="'rank-' + index"
             :banner="banner"
             :position="banner.position"
-            :loading="affiliationSendingStates[banner.position]"
-            @file-selected="onAffiliationFileSelected"
-            @save="saveAffiliationBanner"
+            :loading="rankSendingStates[banner.position]"
+            @file-selected="onRankFileSelected"
+            @save="saveRankImage"
             @error="showErrorMessage"
           />
         </div>
@@ -134,7 +134,7 @@ export default {
     return {
       banner: null,
       activationBannersData: null,
-      affiliationBannersData: null,
+      rankImagesData: null,
       loading: true,
       sendingStates: [false, false, false],
       refreshing: false,
@@ -159,16 +159,32 @@ export default {
         right: false,
       },
 
-      // File storage for affiliation banners
-      affiliationSelectedFiles: {
-        hero: null,
-        kit: null,
+      // File storage for rank images
+      rankSelectedFiles: {
+        bronce: null,
+        plata: null,
+        oro: null,
+        zafiro: null,
+        rubi: null,
+        esmeralda: null,
+        diamante: null,
+        doble_diamante: null,
+        triple_diamante: null,
+        diamante_corona: null,
       },
 
-      // Sending states for affiliation banners
-      affiliationSendingStates: {
-        hero: false,
-        kit: false,
+      // Sending states for rank images
+      rankSendingStates: {
+        bronce: false,
+        plata: false,
+        oro: false,
+        zafiro: false,
+        rubi: false,
+        esmeralda: false,
+        diamante: false,
+        doble_diamante: false,
+        triple_diamante: false,
+        diamante_corona: false,
       },
     };
   },
@@ -227,27 +243,30 @@ export default {
       ];
     },
 
-    affiliationBanners() {
-      if (!this.affiliationBannersData) return [];
+    rankImages() {
+      if (!this.rankImagesData) return [];
 
-      return [
-        {
-          id: "affiliation_banners",
-          img: this.affiliationBannersData.hero || "",
-          title: "Banner Superior Afiliación",
-          description: "Imagen principal de la página de afiliación",
-          dimensions: "1920 x 400 px",
-          position: "hero",
-        },
-        {
-          id: "affiliation_banners",
-          img: this.affiliationBannersData.kit || "",
-          title: "Banner Kit de Inicio",
-          description: "Imagen mostrada en la sección Kit de Inicio",
-          dimensions: "900 x 150 px",
-          position: "kit",
-        },
+      const ranks = [
+        { id: "bronce", title: "Bronce" },
+        { id: "plata", title: "Plata" },
+        { id: "oro", title: "Oro" },
+        { id: "zafiro", title: "Zafiro" },
+        { id: "rubi", title: "Rubí" },
+        { id: "esmeralda", title: "Esmeralda" },
+        { id: "diamante", title: "Diamante" },
+        { id: "doble_diamante", title: "Doble Diamante" },
+        { id: "triple_diamante", title: "Triple Diamante" },
+        { id: "diamante_corona", title: "Diamante Corona" },
       ];
+
+      return ranks.map(rank => ({
+        id: "rank_images",
+        img: this.rankImagesData[rank.id] || "",
+        title: rank.title,
+        description: `Imagen de rango ${rank.title}`,
+        dimensions: "200 x 200 px",
+        position: rank.id,
+      }));
     },
   },
 
@@ -272,10 +291,10 @@ export default {
         this.loading = true;
         const { data } = await api.promos.GET();
         const { data: activationData } = await api.activationBanners.GET();
-        const { data: affiliationData } = await api.affiliationBanners.GET();
+        const { data: rankData } = await api.rankImages.GET();
         this.banner = data.banner;
         this.activationBannersData = activationData.activationBanners;
-        this.affiliationBannersData = affiliationData.affiliationBanners;
+        this.rankImagesData = rankData.rankImages;
       } catch (error) {
         console.error("Error fetching banners:", error);
         this.showErrorMessage("Error al cargar los banners");
@@ -397,17 +416,17 @@ export default {
       }
     },
 
-    // Methods for affiliation banners
-    onAffiliationFileSelected({ position, file, preview }) {
-      this.affiliationSelectedFiles[position] = file;
+    // Methods for rank images
+    onRankFileSelected({ position, file, preview }) {
+      this.rankSelectedFiles[position] = file;
 
-      if (this.affiliationBannersData) {
-        this.affiliationBannersData[position] = preview;
+      if (this.rankImagesData) {
+        this.rankImagesData[position] = preview;
       }
     },
 
-    async saveAffiliationBanner(position) {
-      const file = this.affiliationSelectedFiles[position];
+    async saveRankImage(position) {
+      const file = this.rankSelectedFiles[position];
 
       if (!file) {
         this.showErrorMessage("Por favor selecciona una imagen antes de guardar");
@@ -415,29 +434,29 @@ export default {
       }
 
       try {
-        this.affiliationSendingStates[position] = true;
+        this.rankSendingStates[position] = true;
 
-        const img = await lib.upload(file, file.name, "affiliation_banner");
+        const img = await lib.upload(file, file.name, "rank_image");
 
-        await api.affiliationBanners.POST({
-          id: "affiliation_banners",
+        await api.rankImages.POST({
+          id: "rank_images",
           img,
           position,
         });
 
-        const banner = this.affiliationBanners.find((b) => b.position === position);
-        const bannerTitle = banner ? banner.title : "Banner";
-        this.showSuccessMessage(`${bannerTitle} guardado exitosamente`);
-        this.affiliationSelectedFiles[position] = null;
+        const rank = this.rankImages.find((r) => r.position === position);
+        const rankTitle = rank ? rank.title : "Rango";
+        this.showSuccessMessage(`Imagen de ${rankTitle} guardada exitosamente`);
+        this.rankSelectedFiles[position] = null;
 
         await this.fetchBanners();
       } catch (error) {
-        console.error(`Error saving affiliation banner ${position}:`, error);
-        const banner = this.affiliationBanners.find((b) => b.position === position);
-        const bannerTitle = banner ? banner.title : `Banner ${position}`;
-        this.showErrorMessage(`Error al guardar el ${bannerTitle}`);
+        console.error(`Error saving rank image ${position}:`, error);
+        const rank = this.rankImages.find((r) => r.position === position);
+        const rankTitle = rank ? rank.title : "rango";
+        this.showErrorMessage(`Error al guardar la imagen de ${rankTitle}`);
       } finally {
-        this.affiliationSendingStates[position] = false;
+        this.rankSendingStates[position] = false;
       }
     },
   },

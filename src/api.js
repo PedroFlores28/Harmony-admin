@@ -18,7 +18,7 @@ class API {
     closeds,
     promos,
     activationBanners,
-    affiliationBanners,
+    rankImages,
     promo,
     pay,
     wallet,
@@ -46,7 +46,7 @@ class API {
     this.closeds = closeds;
     this.promos = promos;
     this.activationBanners = activationBanners;
-    this.affiliationBanners = affiliationBanners;
+    this.rankImages = rankImages;
     this.promo = promo;
     this.pay = pay;
     this.wallet = wallet;
@@ -175,12 +175,12 @@ class ActivationBanners {
     return axios.post(`/admin/activation-banners`, { id, img, position, url });
   }
 }
-class AffiliationBanners {
+class RankImages {
   GET() {
-    return axios.get(`/admin/affiliation-banners`);
+    return axios.get(`/admin/rank-images`);
   }
   POST({ id, img, position }) {
-    return axios.post(`/admin/affiliation-banners`, { id, img, position });
+    return axios.post(`/admin/rank-images`, { id, img, position });
   }
 }
 class Promo {
@@ -297,8 +297,8 @@ class AIPredictions {
 
 class MLMApi {
   GET(endpoint, params = {}) {
-    const queryString = Object.keys(params).length > 0 
-      ? '?' + new URLSearchParams(params).toString() 
+    const queryString = Object.keys(params).length > 0
+      ? '?' + new URLSearchParams(params).toString()
       : '';
     return axios.get(`/mlm-api/${endpoint}${queryString}`);
   }
@@ -310,8 +310,8 @@ class MLMApi {
 
 class AIQualityPredictions {
   GET(params = {}) {
-    const queryString = Object.keys(params).length > 0 
-      ? '?' + new URLSearchParams(params).toString() 
+    const queryString = Object.keys(params).length > 0
+      ? '?' + new URLSearchParams(params).toString()
       : '';
     return axios.get(`/admin/ai-leadership-predictions-quality${queryString}`);
   }
@@ -323,29 +323,29 @@ class AIQualityPredictions {
 
 class DeliveryManagement {
   GET(params = {}) {
-    const queryString = Object.keys(params).length > 0 
-      ? '?' + new URLSearchParams(params).toString() 
+    const queryString = Object.keys(params).length > 0
+      ? '?' + new URLSearchParams(params).toString()
       : '';
     return axios.get(`/admin/delivery-management${queryString}`);
   }
 
   POST(data = {}, params = {}) {
-    const queryString = Object.keys(params).length > 0 
-      ? '?' + new URLSearchParams(params).toString() 
+    const queryString = Object.keys(params).length > 0
+      ? '?' + new URLSearchParams(params).toString()
       : '';
     return axios.post(`/admin/delivery-management${queryString}`, data);
   }
 
   PUT(data = {}, params = {}) {
-    const queryString = Object.keys(params).length > 0 
-      ? '?' + new URLSearchParams(params).toString() 
+    const queryString = Object.keys(params).length > 0
+      ? '?' + new URLSearchParams(params).toString()
       : '';
     return axios.put(`/admin/delivery-management${queryString}`, data);
   }
 
   DELETE(params = {}) {
-    const queryString = Object.keys(params).length > 0 
-      ? '?' + new URLSearchParams(params).toString() 
+    const queryString = Object.keys(params).length > 0
+      ? '?' + new URLSearchParams(params).toString()
       : '';
     return axios.delete(`/admin/delivery-management${queryString}`);
   }
@@ -393,7 +393,7 @@ export default new API({
   closeds: new Closeds(),
   promos: new Promos(),
   activationBanners: new ActivationBanners(),
-  affiliationBanners: new AffiliationBanners(),
+  rankImages: new RankImages(),
   promo: new Promo(),
   pay: new Pay(),
   wallet: new Wallet(),
