@@ -386,6 +386,18 @@
               </div>
 
               <div class="field">
+                <label class="label">CCI</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    v-model="editingOffice.cci"
+                    placeholder="Código de Cuenta Interbancario"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
                 <label class="label">Horario</label>
                 <div class="control">
                   <textarea
@@ -487,6 +499,18 @@
               </div>
 
               <div class="field">
+                <label class="label">CCI</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    v-model="newOffice.cci"
+                    placeholder="Código de Cuenta Interbancario"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
                 <label class="label">Horario</label>
                 <div class="control">
                   <textarea
@@ -581,6 +605,7 @@ export default {
         address: "",
         googleMapsUrl: "",
         accounts: "",
+        cci: "",
         horario: "",
         dias: "",
       },
@@ -590,6 +615,7 @@ export default {
         address: "",
         googleMapsUrl: "",
         accounts: "",
+        cci: "",
         horario: "",
         dias: "",
       },
