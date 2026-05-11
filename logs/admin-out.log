@@ -1,0 +1,2344 @@
+
+> lehaim-admin@0.1.0 serve
+> vue-cli-service serve --port 8081
+
+ INFO  Starting development server...
+ WARNING  Compiled with 2 warnings3:21:06 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
+ WAIT  Compiling...3:21:15 PM
+
+ WARNING  Compiled with 2 warnings3:21:16 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:22:11 PM
+
+ WARNING  Compiled with 2 warnings3:22:11 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:28:14 PM
+
+ WARNING  Compiled with 2 warnings3:28:14 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:29:32 PM
+
+ WARNING  Compiled with 2 warnings3:29:32 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:30:46 PM
+
+ WARNING  Compiled with 2 warnings3:30:46 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:31:25 PM
+
+ WARNING  Compiled with 2 warnings3:31:25 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:34:07 PM
+
+ WARNING  Compiled with 2 warnings3:34:07 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:34:52 PM
+
+ WARNING  Compiled with 2 warnings3:34:52 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:36:51 PM
+
+ WARNING  Compiled with 2 warnings3:36:51 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:38:26 PM
+
+ WARNING  Compiled with 2 warnings3:38:26 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:39:50 PM
+
+ WARNING  Compiled with 2 warnings3:39:50 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:40:09 PM
+
+ WARNING  Compiled with 2 warnings3:40:10 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:41:38 PM
+
+ WARNING  Compiled with 2 warnings3:41:39 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:41:56 PM
+
+ WARNING  Compiled with 2 warnings3:41:56 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:42:26 PM
+
+ WARNING  Compiled with 2 warnings3:42:27 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:43:39 PM
+
+ WARNING  Compiled with 2 warnings3:43:39 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:43:40 PM
+
+ WARNING  Compiled with 2 warnings3:43:41 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:44:18 PM
+
+ WARNING  Compiled with 2 warnings3:44:18 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:46:32 PM
+
+ WARNING  Compiled with 2 warnings3:46:32 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:48:36 PM
+
+ WARNING  Compiled with 2 warnings3:48:36 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:54:03 PM
+
+ WARNING  Compiled with 2 warnings3:54:03 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...3:58:39 PM
+
+ WARNING  Compiled with 2 warnings3:58:39 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:01:01 PM
+
+ WARNING  Compiled with 2 warnings4:01:01 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:01:56 PM
+
+ WARNING  Compiled with 2 warnings4:01:56 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:02:18 PM
+
+ WARNING  Compiled with 2 warnings4:02:18 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:04:31 PM
+
+ WARNING  Compiled with 2 warnings4:04:31 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:04:31 PM
+
+ WARNING  Compiled with 2 warnings4:04:32 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:08:57 PM
+
+ WARNING  Compiled with 2 warnings4:08:57 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:09:14 PM
+
+ WARNING  Compiled with 2 warnings4:09:14 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:11:25 PM
+
+ WARNING  Compiled with 2 warnings4:11:25 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...4:15:00 PM
+
+ WARNING  Compiled with 2 warnings4:15:01 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+
+> lehaim-admin@0.1.0 serve
+> vue-cli-service serve --port 8081
+
+ INFO  Starting development server...
+ WARNING  Compiled with 2 warnings12:17:52 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
+
+> lehaim-admin@0.1.0 serve
+> vue-cli-service serve --port 8081
+
+ INFO  Starting development server...
+ WARNING  Compiled with 2 warnings12:26:08 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
+
+> lehaim-admin@0.1.0 serve
+> vue-cli-service serve --port 8081
+
+ INFO  Starting development server...
+ WARNING  Compiled with 2 warnings12:29:02 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
+ WAIT  Compiling...1:08:15 PM
+
+ WARNING  Compiled with 2 warnings1:08:16 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:08:29 PM
+
+ WARNING  Compiled with 2 warnings1:08:30 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:08:38 PM
+
+ WARNING  Compiled with 2 warnings1:08:39 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:08:57 PM
+
+ WARNING  Compiled with 2 warnings1:08:58 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:23:44 PM
+
+ WARNING  Compiled with 2 warnings1:23:45 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:23:58 PM
+
+ WARNING  Compiled with 2 warnings1:23:58 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:24:17 PM
+
+ WARNING  Compiled with 2 warnings1:24:18 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:33:27 PM
+
+ WARNING  Compiled with 2 warnings1:33:28 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:33:42 PM
+
+ WARNING  Compiled with 2 warnings1:33:43 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:33:57 PM
+
+ WARNING  Compiled with 2 warnings1:33:57 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:34:17 PM
+
+ WARNING  Compiled with 2 warnings1:34:18 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:36:42 PM
+
+ WARNING  Compiled with 2 warnings1:36:42 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:40:55 PM
+
+ WARNING  Compiled with 2 warnings1:40:56 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:41:00 PM
+
+ WARNING  Compiled with 2 warnings1:41:01 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:41:04 PM
+
+ WARNING  Compiled with 2 warnings1:41:05 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:41:18 PM
+
+ WARNING  Compiled with 2 warnings1:41:19 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:41:34 PM
+
+ WARNING  Compiled with 2 warnings1:41:35 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:41:41 PM
+
+ WARNING  Compiled with 2 warnings1:41:42 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:41:52 PM
+
+ WARNING  Compiled with 2 warnings1:41:52 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:42:07 PM
+
+ WARNING  Compiled with 2 warnings1:42:07 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:42:37 PM
+
+ WARNING  Compiled with 2 warnings1:42:38 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:42:47 PM
+
+ WARNING  Compiled with 2 warnings1:42:48 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
+ WAIT  Compiling...1:43:12 PM
+
+ WARNING  Compiled with 2 warnings1:43:12 PM
+
+ warning  in ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(129:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css 4:14-410 15:3-20:5 16:22-418
+ @ ./src/views/LeadershipPredictions.vue?vue&type=style&index=0&id=dcf7d716&scoped=true&lang=css
+ @ ./src/views/LeadershipPredictions.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ warning  in ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+
+Module Warning (from ./node_modules/postcss-loader/src/index.js):
+Warning
+
+(49:3) end value has mixed support, consider using flex-end instead
+
+ @ ./node_modules/vue-style-loader??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css 4:14-404 15:3-20:5 16:22-412
+ @ ./src/components/AdvancedFilters.vue?vue&type=style&index=0&id=d936a20e&scoped=true&lang=css
+ @ ./src/components/AdvancedFilters.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue?vue&type=script&lang=js
+ @ ./src/views/Reports.vue
+ @ ./src/router.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.2.40:8081/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+
+  App running at:
+  - Local:   http://localhost:8081/ 
+  - Network: http://192.168.2.40:8081/
+
