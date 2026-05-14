@@ -173,7 +173,7 @@
                     <select v-model="editingUser.rank">
                       <option value="none">Ninguno</option>
                       <option value="active">ACTIVO</option>
-                      <option value="star">BRONCE</option>
+                      <option value="star">ESTRELLA</option>
                       <option value="silver">PLATA</option>
                       <option value="gold">ORO</option>
                       <option value="ruby">RUBY</option>
@@ -1049,7 +1049,7 @@ export default {
     getRankLabel(val) {
       if (val == "none") return "Ninguno";
       if (val == "active") return "ACTIVO";
-      if (val == "star") return "BRONCE";
+      if (val == "star") return "ESTRELLA";
       if (val == "silver") return "PLATA";
       if (val == "ruby") return "RUBY";
       if (val == "gold") return "ORO";
