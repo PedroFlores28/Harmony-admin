@@ -86,16 +86,6 @@
                 <span>Transacciones</span>
               </a>
 
-              <!-- Reports -->
-              
-              <!-- Leadership Predictions -->
-              <a class="navbar-item" href="/leadership-predictions">
-                <span class="icon">
-                  <i class="fas fa-crown"></i>
-                </span>
-                <span>Predicciones</span>
-              </a>
-
               <!-- AI Predictions -->
 <!--               <a class="navbar-item" href="/ai-predictions">
                 <span class="icon">
