@@ -161,30 +161,30 @@ export default {
 
       // File storage for rank images
       rankSelectedFiles: {
-        bronce: null,
-        plata: null,
+        millonario: null,
         oro: null,
-        zafiro: null,
-        rubi: null,
         esmeralda: null,
+        platino: null,
         diamante: null,
+        diamante_azul: null,
+        diamante_ejecutivo: null,
         doble_diamante: null,
-        triple_diamante: null,
         diamante_corona: null,
+        top_harmony: null,
       },
 
       // Sending states for rank images
       rankSendingStates: {
-        bronce: false,
-        plata: false,
+        millonario: false,
         oro: false,
-        zafiro: false,
-        rubi: false,
         esmeralda: false,
+        platino: false,
         diamante: false,
+        diamante_azul: false,
+        diamante_ejecutivo: false,
         doble_diamante: false,
-        triple_diamante: false,
         diamante_corona: false,
+        top_harmony: false,
       },
     };
   },
@@ -247,16 +247,16 @@ export default {
       if (!this.rankImagesData) return [];
 
       const ranks = [
-        { id: "bronce", title: "Bronce" },
-        { id: "plata", title: "Plata" },
+        { id: "millonario", title: "Millonario" },
         { id: "oro", title: "Oro" },
-        { id: "zafiro", title: "Zafiro" },
-        { id: "rubi", title: "Rubí" },
         { id: "esmeralda", title: "Esmeralda" },
+        { id: "platino", title: "Platino" },
         { id: "diamante", title: "Diamante" },
+        { id: "diamante_azul", title: "Diamante Azul" },
+        { id: "diamante_ejecutivo", title: "Diamante Ejecutivo" },
         { id: "doble_diamante", title: "Doble Diamante" },
-        { id: "triple_diamante", title: "Triple Diamante" },
         { id: "diamante_corona", title: "Diamante Corona" },
+        { id: "top_harmony", title: "Top Harmony" },
       ];
 
       return ranks.map(rank => ({

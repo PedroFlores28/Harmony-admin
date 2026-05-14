@@ -15,7 +15,7 @@
             <div class="member-details">
               <span class="member-id">ID: {{ child.dni }}</span>
               <span class="member-rank" :class="getRankClass(child.rank)">
-                {{ child.rank || "Bronce" }}
+                {{ getRankLabel(child.rank) }}
               </span>
               <span class="member-status" :class="getStatusClass(child.status)">
                 {{ child.status || "Activo" }}
@@ -120,13 +120,33 @@ export default {
     },
     getRankClass(rank) {
       const rankClasses = {
-        Bronce: "rank-bronze",
-        Plata: "rank-silver",
-        Oro: "rank-gold",
-        Platino: "rank-platinum",
-        Diamante: "rank-diamond",
+        MILLONARIO: "rank-millonario",
+        ORO: "rank-oro",
+        ESMERALDA: "rank-esmeralda",
+        PLATINO: "rank-platino",
+        DIAMANTE: "rank-diamante",
+        DIAMANTE_AZUL: "rank-diamante-azul",
+        DIAMANTE_EJECUTIVO: "rank-diamante-ejecutivo",
+        DOBLE_DIAMANTE: "rank-doble-diamante",
+        DIAMANTE_CORONA: "rank-diamante-corona",
+        TOP_HARMONY: "rank-top-harmony",
       };
-      return rankClasses[rank] || "rank-bronze";
+      return rankClasses[rank] || "rank-sin-rango";
+    },
+    getRankLabel(rank) {
+      const rankLabels = {
+        MILLONARIO: "Millonario",
+        ORO: "Oro",
+        ESMERALDA: "Esmeralda",
+        PLATINO: "Platino",
+        DIAMANTE: "Diamante",
+        DIAMANTE_AZUL: "Diamante Azul",
+        DIAMANTE_EJECUTIVO: "Diamante Ejecutivo",
+        DOBLE_DIAMANTE: "Doble Diamante",
+        DIAMANTE_CORONA: "Diamante Corona",
+        TOP_HARMONY: "Top Harmony",
+      };
+      return rankLabels[rank] || "Sin rango";
     },
     getStatusClass(status) {
       const statusClasses = {
@@ -161,27 +181,52 @@ export default {
   position: relative;
 }
 
-.member-avatar.rank-bronze {
-  background: #cd7f32;
+.member-avatar.rank-sin-rango {
+  background: #6c757d;
 }
 
-.member-avatar.rank-silver {
-  background: #c0c0c0;
+.member-avatar.rank-millonario {
+  background: #5c0f39;
 }
 
-.member-avatar.rank-gold {
+.member-avatar.rank-oro {
   background: #ffd700;
   color: #333;
 }
 
-.member-avatar.rank-platinum {
+.member-avatar.rank-esmeralda {
+  background: #2ecc71;
+}
+
+.member-avatar.rank-platino {
   background: #e5e4e2;
   color: #333;
 }
 
-.member-avatar.rank-diamond {
+.member-avatar.rank-diamante {
   background: #b9f2ff;
   color: #333;
+}
+
+.member-avatar.rank-diamante-azul {
+  background: #0476d9;
+}
+
+.member-avatar.rank-diamante-ejecutivo {
+  background: #243b6b;
+}
+
+.member-avatar.rank-doble-diamante {
+  background: #7dd3fc;
+  color: #123;
+}
+
+.member-avatar.rank-diamante-corona {
+  background: #8b5cf6;
+}
+
+.member-avatar.rank-top-harmony {
+  background: #111827;
 }
 
 .member-info {
@@ -219,29 +264,59 @@ export default {
   font-weight: 500;
 }
 
-.rank-bronze {
-  background: #cd7f32;
+.rank-sin-rango {
+  background: #6c757d;
   color: white;
 }
 
-.rank-silver {
-  background: #c0c0c0;
+.rank-millonario {
+  background: #5c0f39;
   color: white;
 }
 
-.rank-gold {
+.rank-oro {
   background: #ffd700;
   color: #333;
 }
 
-.rank-platinum {
+.rank-esmeralda {
+  background: #2ecc71;
+  color: white;
+}
+
+.rank-platino {
   background: #e5e4e2;
   color: #333;
 }
 
-.rank-diamond {
+.rank-diamante {
   background: #b9f2ff;
   color: #333;
+}
+
+.rank-diamante-azul {
+  background: #0476d9;
+  color: white;
+}
+
+.rank-diamante-ejecutivo {
+  background: #243b6b;
+  color: white;
+}
+
+.rank-doble-diamante {
+  background: #7dd3fc;
+  color: #123;
+}
+
+.rank-diamante-corona {
+  background: #8b5cf6;
+  color: white;
+}
+
+.rank-top-harmony {
+  background: #111827;
+  color: white;
 }
 
 .member-status {

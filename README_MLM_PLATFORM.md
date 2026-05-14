@@ -8,11 +8,16 @@ Esta es una implementación completa de una plataforma de Marketing Multinivel (
 
 ### 🏆 **Sistema de Rangos MLM**
 
-- **Bronce**: Rango inicial para nuevos miembros
-- **Plata**: Requiere 5 referidos directos
-- **Oro**: Requiere 10 referidos directos y $5,000 en ventas
-- **Platino**: Requiere 20 referidos directos y $15,000 en ventas
-- **Diamante**: Requiere 50 referidos directos y $50,000 en ventas
+- **Millonario**
+- **Oro**
+- **Esmeralda**
+- **Platino**
+- **Diamante**
+- **Diamante Azul**
+- **Diamante Ejecutivo**
+- **Doble Diamante**
+- **Diamante Corona**
+- **Top Harmony**
 
 ### 📊 **Estadísticas en Tiempo Real**
 
@@ -24,7 +29,7 @@ Esta es una implementación completa de una plataforma de Marketing Multinivel (
 ### 🔍 **Filtros y Búsqueda Avanzada**
 
 - **Filtro por Estado**: Activo, Inactivo, Pendiente
-- **Filtro por Rango**: Bronce, Plata, Oro, Platino, Diamante
+- **Filtro por Rango**: Millonario, Oro, Esmeralda, Platino, Diamante, Diamante Azul, Diamante Ejecutivo, Doble Diamante, Diamante Corona, Top Harmony
 - **Búsqueda en Tiempo Real**: Por nombre, ID o email
 - **Resaltado Visual**: Resultados de búsqueda destacados
 
@@ -76,13 +81,13 @@ Componente para renderizar cada nodo del árbol MLM con:
 ```javascript
 getRankClass(rank) {
   const rankClasses = {
-    'Bronce': 'rank-bronze',
-    'Plata': 'rank-silver',
-    'Oro': 'rank-gold',
-    'Platino': 'rank-platinum',
-    'Diamante': 'rank-diamond'
+    MILLONARIO: 'rank-millonario',
+    ORO: 'rank-oro',
+    ESMERALDA: 'rank-esmeralda',
+    PLATINO: 'rank-platino',
+    DIAMANTE: 'rank-diamante'
   }
-  return rankClasses[rank] || 'rank-bronze'
+  return rankClasses[rank] || 'rank-sin-rango'
 }
 ```
 
@@ -124,7 +129,7 @@ La plataforma incluye datos simulados para demostrar las funcionalidades:
 
 ### Información del Miembro
 
-- **Rango**: Asignado aleatoriamente (Bronce a Diamante)
+- **Rango**: Asignado aleatoriamente entre los 10 rangos oficiales
 - **Estado**: Activo, Inactivo o Pendiente
 - **Email**: Generado automáticamente basado en el nombre
 - **Teléfono**: Número de teléfono simulado
@@ -139,9 +144,8 @@ La plataforma incluye datos simulados para demostrar las funcionalidades:
 
 ### 🎨 **Diseño de Rangos**
 
-- **Bronce**: Color marrón (#cd7f32)
-- **Plata**: Color gris plateado (#c0c0c0)
 - **Oro**: Color dorado (#ffd700)
+- **Esmeralda**: Color verde (#2ecc71)
 - **Platino**: Color platino (#e5e4e2)
 - **Diamante**: Color azul diamante (#b9f2ff)
 

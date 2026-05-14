@@ -1565,20 +1565,18 @@ export default {
 
     getRankName(rank) {
       const rankNames = {
-        none: "Ninguno",
-        active: "ACTIVO",
-        star: "MASTER",
-        master: "PLATA",
-        silver: "PLATINO",
-        gold: "ORO",
-        sapphire: "ZAFIRO",
-        RUBI: "DIAMANTE RUBI",
-        DIAMANTE: "DIAMANTE ESTRELLA",
-        "DOBLE DIAMANTE": "DIAMANTE DOS ESTRELLAS",
-        "TRIPLE DIAMANTE": "DIAMANTE TRES ESTRELLAS",
-        "DIAMANTE ESTRELLA": "DIAMANTE CBM",
+        MILLONARIO: "Millonario",
+        ORO: "Oro",
+        ESMERALDA: "Esmeralda",
+        PLATINO: "Platino",
+        DIAMANTE: "Diamante",
+        DIAMANTE_AZUL: "Diamante Azul",
+        DIAMANTE_EJECUTIVO: "Diamante Ejecutivo",
+        DOBLE_DIAMANTE: "Doble Diamante",
+        DIAMANTE_CORONA: "Diamante Corona",
+        TOP_HARMONY: "Top Harmony",
       };
-      return rankNames[rank] || "Rango desconocido";
+      return rankNames[rank] || "Sin rango";
     },
 
     getStatusText(person) {
@@ -2433,34 +2431,24 @@ ul.tree span {
   display: none;
 }
 
-.node-visual i.fa-gem.star {
+.node-visual i.fa-gem.MILLONARIO {
   display: inline;
-  color: #ffe400;
+  color: #5c0f39;
 }
 
-.node-visual i.fa-gem.master {
-  display: inline;
-  color: #14ec42;
-}
-
-.node-visual i.fa-gem.silver {
-  display: inline;
-  color: #d3d3d3;
-}
-
-.node-visual i.fa-gem.gold {
+.node-visual i.fa-gem.ORO {
   display: inline;
   color: #d4af37;
 }
 
-.node-visual i.fa-gem.sapphire {
+.node-visual i.fa-gem.ESMERALDA {
   display: inline;
-  color: #0f52ba;
+  color: #2ecc71;
 }
 
-.node-visual i.fa-gem.RUBI {
+.node-visual i.fa-gem.PLATINO {
   display: inline;
-  color: #e0115f;
+  color: #e5e4e2;
 }
 
 .node-visual i.fa-gem.DIAMANTE {
@@ -2468,19 +2456,29 @@ ul.tree span {
   color: #b9f2ff;
 }
 
-.node-visual i.fa-gem.DOBLE {
+.node-visual i.fa-gem.DIAMANTE_AZUL {
   display: inline;
-  color: #b9f2ff;
+  color: #0476d9;
 }
 
-.node-visual i.fa-gem.TRIPLE {
+.node-visual i.fa-gem.DIAMANTE_EJECUTIVO {
   display: inline;
-  color: #b9f2ff;
+  color: #243b6b;
 }
 
-.node-visual i.fa-gem.DIAMANTE ESTRELLA {
+.node-visual i.fa-gem.DOBLE_DIAMANTE {
   display: inline;
-  color: #b9f2ff;
+  color: #7dd3fc;
+}
+
+.node-visual i.fa-gem.DIAMANTE_CORONA {
+  display: inline;
+  color: #8b5cf6;
+}
+
+.node-visual i.fa-gem.TOP_HARMONY {
+  display: inline;
+  color: #111827;
 }
 
 .node-info {
