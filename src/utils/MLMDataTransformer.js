@@ -71,11 +71,16 @@ export class MLMDataTransformer {
     const directReferrals = this.countDirectReferrals(node);
     const salesVolume = mlmData[node.dni]?.salesVolume || 0;
 
-    if (salesVolume >= 50000 && directReferrals >= 50) return "Diamante";
-    if (salesVolume >= 15000 && directReferrals >= 20) return "Platino";
-    if (salesVolume >= 5000 && directReferrals >= 10) return "Oro";
-    if (directReferrals >= 5) return "Plata";
-    return "Bronce";
+    if (salesVolume >= 50000 && directReferrals >= 50) return "TOP_HARMONY";
+    if (salesVolume >= 40000 && directReferrals >= 40) return "DIAMANTE_CORONA";
+    if (salesVolume >= 30000 && directReferrals >= 30) return "DOBLE_DIAMANTE";
+    if (salesVolume >= 20000 && directReferrals >= 25) return "DIAMANTE_EJECUTIVO";
+    if (salesVolume >= 15000 && directReferrals >= 20) return "DIAMANTE_AZUL";
+    if (salesVolume >= 10000 && directReferrals >= 15) return "DIAMANTE";
+    if (salesVolume >= 5000 && directReferrals >= 10) return "PLATINO";
+    if (directReferrals >= 5) return "ESMERALDA";
+    if (directReferrals >= 2) return "ORO";
+    return "MILLONARIO";
   }
 
   /**
@@ -190,11 +195,16 @@ export class MLMDataTransformer {
   static getCommissionRate(node, mlmData) {
     const rank = this.calculateRank(node, mlmData);
     const rates = {
-      Bronce: 0.05,
-      Plata: 0.08,
-      Oro: 0.12,
-      Platino: 0.15,
-      Diamante: 0.2,
+      MILLONARIO: 0.05,
+      ORO: 0.08,
+      ESMERALDA: 0.1,
+      PLATINO: 0.12,
+      DIAMANTE: 0.15,
+      DIAMANTE_AZUL: 0.17,
+      DIAMANTE_EJECUTIVO: 0.2,
+      DOBLE_DIAMANTE: 0.22,
+      DIAMANTE_CORONA: 0.24,
+      TOP_HARMONY: 0.25,
     };
     return rates[rank] || 0.05;
   }
@@ -327,11 +337,16 @@ export class MLMDataTransformer {
       totalCommissions: 0,
       totalSalesVolume: 0,
       rankDistribution: {
-        Bronce: 0,
-        Plata: 0,
-        Oro: 0,
-        Platino: 0,
-        Diamante: 0,
+        MILLONARIO: 0,
+        ORO: 0,
+        ESMERALDA: 0,
+        PLATINO: 0,
+        DIAMANTE: 0,
+        DIAMANTE_AZUL: 0,
+        DIAMANTE_EJECUTIVO: 0,
+        DOBLE_DIAMANTE: 0,
+        DIAMANTE_CORONA: 0,
+        TOP_HARMONY: 0,
       },
       statusDistribution: {
         Activo: 0,

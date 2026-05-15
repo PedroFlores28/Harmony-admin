@@ -30,90 +30,39 @@
         </div>
 
         <div class="table-container closure-table-wrap">
-          <table class="table is-fullwidth is-striped is-hoverable is-narrow closure-table">
+          <table class="table is-fullwidth is-hoverable closure-table closure-summary-table">
             <thead>
-              <tr class="closure-group-row">
-                <th colspan="4" class="group-persona">1 · Persona</th>
-                <th colspan="8" class="group-rango">2 · Rango</th>
-                <th colspan="6" class="group-volumen">3 · Puntos / volumen</th>
-                <th colspan="10" class="group-residual">4 · Residual</th>
-                <th class="group-soporte">5</th>
-              </tr>
               <tr>
-                <th class="sticky-num">#</th>
-                <th class="sticky-name">Nombre</th>
-                <th>DNI</th>
-                <th>Plan</th>
-
-                <th>Actividad</th>
-                <th>Rango</th>
-                <th>Rango sistema</th>
-                <th>ID</th>
-                <th>PP calif.</th>
-                <th>≥180</th>
-                <th>Niv.</th>
-                <th>Comp.</th>
-
-                <th>P. act.</th>
-                <th>P. afil.</th>
-                <th>PG</th>
-                <th>Vol. org.</th>
-                <th>Act. dir.</th>
-                <th>Piernas</th>
-
-                <th class="col-total-res">Σ residual</th>
-                <th>G1</th>
-                <th>G2</th>
-                <th>G3</th>
-                <th>G4</th>
-                <th>G5</th>
-                <th>G6+</th>
-                <th>Nº</th>
-                <th class="col-detail">Detalle</th>
-                <th>B. rango</th>
-
-                <th>Padre</th>
+                <th class="col-num">#</th>
+                <th class="col-name">Nombre</th>
+                <th class="col-points">Pts. grupales</th>
+                <th class="col-rank">Rango cerrado</th>
+                <th class="col-residual">Bono residual</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(node, i) in qualifiedNodes" :key="'t-' + i">
-                <th class="sticky-num">{{ i + 1 }}</th>
-                <td class="sticky-name closure-name">{{ node.name }}</td>
-                <td class="has-text-grey is-size-7">{{ node.dni || '—' }}</td>
-                <td class="is-size-7"><span class="tag is-info is-light">{{ node.plan || '—' }}</span></td>
-
-                <td class="is-size-7">{{ actividadEtiqueta(node) }}</td>
-                <td><span class="tag is-dark is-light">{{ node.rank }}</span></td>
-                <td class="is-size-7">{{ hq(node).rango_calculado_nombre || '—' }}</td>
-                <td class="has-text-centered">{{ hq(node).rango_calculado_id != null ? hq(node).rango_calculado_id : '—' }}</td>
-                <td class="has-text-right has-text-weight-medium">{{ fmtNum(hq(node).pp) }}</td>
-                <td class="has-text-centered">
-                  <span v-if="ppOk(hq(node).pp)" class="tag is-success is-light">Sí</span>
-                  <span v-else-if="hq(node).pp !== undefined && hq(node).pp !== null && hq(node).pp !== ''" class="tag is-warning is-light">No</span>
-                  <span v-else>—</span>
+                <th class="col-num">{{ i + 1 }}</th>
+                <td class="col-name closure-name">
+                  <strong>{{ node.name || '—' }}</strong>
+                  <div class="has-text-grey is-size-7">DNI {{ node.dni || '—' }}</div>
                 </td>
-                <td class="has-text-centered">{{ node.levels != null ? node.levels : '—' }}</td>
-                <td class="has-text-centered is-size-7">{{ siNo(hq(node).compresion_residual_activa) }}</td>
-
-                <td class="has-text-right">{{ fmtNum(node.points) }}</td>
-                <td class="has-text-right">{{ fmtNum(node.affiliation_points) }}</td>
-                <td class="has-text-right">{{ fmtNum(hq(node).pg_grupal_sin_propio) }}</td>
-                <td class="has-text-right has-text-grey">{{ fmtNum(node.total_points) }}</td>
-                <td class="has-text-right">{{ fmtNum(hq(node).activos_directos) }}</td>
-                <td class="is-size-7 has-text-grey leg-cell">{{ fmtLegs(node._total) }}</td>
-
-                <td class="has-text-right has-text-weight-bold col-total-res">{{ fmtMoney(node.residual_bonus) }}</td>
-                <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(node, 1)) }}</td>
-                <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(node, 2)) }}</td>
-                <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(node, 3)) }}</td>
-                <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(node, 4)) }}</td>
-                <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(node, 5)) }}</td>
-                <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen6Plus(node)) }}</td>
-                <td class="has-text-centered">{{ residualLineCount(node) }}</td>
-                <td class="is-size-7 detail-cell col-detail">{{ fmtResidualDetailFull(node) }}</td>
-                <td class="is-size-7 bonus-cell">{{ fmtPaysCierre(node._pays) }}</td>
-
-                <td class="is-size-7 has-text-grey">{{ shortId(node.parentId) }}</td>
+                <td class="col-points">
+                  <strong>Total: {{ fmtNum(node.total_points) }}</strong>
+                  <div class="legs-box" v-if="node._total && node._total.length">
+                    <div v-for="(pts, idx) in node._total" :key="'leg-' + i + '-' + idx" class="leg-row">
+                      <span>Pierna {{ idx + 1 }}</span>
+                      <strong>{{ fmtNum(pts) }} pts</strong>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-rank">
+                  <span class="tag is-warning is-light summary-rank-tag">{{ rankLabel(node.rank) }}</span>
+                </td>
+                <td class="col-residual">
+                  <strong class="residual-total">S/ {{ fmtMoney(node.residual_bonus) }}</strong>
+                  <div class="residual-detail">{{ fmtResidualDetailShort(node) }}</div>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -143,86 +92,39 @@
           <strong>{{ closed.date | date }}</strong>
           <br><br>
           <div class="table-container closure-table-wrap">
-            <table class="table is-fullwidth is-striped is-hoverable is-narrow closure-table">
+            <table class="table is-fullwidth is-hoverable closure-table closure-summary-table">
               <thead>
-                <tr class="closure-group-row">
-                  <th colspan="4" class="group-persona">1 · Persona</th>
-                  <th colspan="8" class="group-rango">2 · Rango</th>
-                  <th colspan="6" class="group-volumen">3 · Puntos / volumen</th>
-                  <th colspan="10" class="group-residual">4 · Residual</th>
-                  <th class="group-soporte">5</th>
-                </tr>
                 <tr>
-                  <th class="sticky-num">#</th>
-                  <th class="sticky-name">Nombre</th>
-                  <th>DNI</th>
-                  <th>Plan</th>
-                  <th>Actividad</th>
-                  <th>Rango</th>
-                  <th>Rango sistema</th>
-                  <th>ID</th>
-                  <th>PP calif.</th>
-                  <th>≥180</th>
-                  <th>Niv.</th>
-                  <th>Comp.</th>
-                  <th>P. act.</th>
-                  <th>P. afil.</th>
-                  <th>PG</th>
-                  <th>Vol. org.</th>
-                  <th>Act. dir.</th>
-                  <th>Piernas</th>
-                  <th class="col-total-res">Σ residual</th>
-                  <th>G1</th>
-                  <th>G2</th>
-                  <th>G3</th>
-                  <th>G4</th>
-                  <th>G5</th>
-                  <th>G6+</th>
-                  <th>Nº</th>
-                  <th class="col-detail">Detalle</th>
-                  <th>B. rango</th>
-                  <th>Padre</th>
+                  <th class="col-num">#</th>
+                  <th class="col-name">Nombre</th>
+                  <th class="col-points">Pts. grupales</th>
+                  <th class="col-rank">Rango cerrado</th>
+                  <th class="col-residual">Bono residual</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="(user, i) in closed.users" :key="'u-' + ci + '-' + i">
-                  <th class="sticky-num">{{ i + 1 }}</th>
-                  <td class="sticky-name closure-name">{{ user.name }}</td>
-                  <td class="has-text-grey is-size-7">{{ user.dni || '—' }}</td>
-                  <td class="is-size-7"><span class="tag is-info is-light">{{ user.plan || hqSaved(user).plan || '—' }}</span></td>
-
-                  <td class="is-size-7">{{ actividadEtiqueta(user) }}</td>
-                  <td><span class="tag is-dark is-light">{{ user.rank }}</span></td>
-                  <td class="is-size-7">{{ hqSaved(user).rango_calculado_nombre || '—' }}</td>
-                  <td class="has-text-centered">{{ hqSaved(user).rango_calculado_id != null ? hqSaved(user).rango_calculado_id : '—' }}</td>
-                  <td class="has-text-right has-text-weight-medium">{{ fmtNum(hqSaved(user).pp) }}</td>
-                  <td class="has-text-centered">
-                    <span v-if="ppOk(hqSaved(user).pp)" class="tag is-success is-light">Sí</span>
-                    <span v-else-if="hqSaved(user).pp !== undefined && hqSaved(user).pp !== null && hqSaved(user).pp !== ''" class="tag is-warning is-light">No</span>
-                    <span v-else>—</span>
+                  <th class="col-num">{{ i + 1 }}</th>
+                  <td class="col-name closure-name">
+                    <strong>{{ user.name || '—' }}</strong>
+                    <div class="has-text-grey is-size-7">DNI {{ user.dni || '—' }}</div>
                   </td>
-                  <td class="has-text-centered">{{ user.levels != null ? user.levels : '—' }}</td>
-                  <td class="has-text-centered is-size-7">{{ siNo(hqSaved(user).compresion_residual_activa) }}</td>
-
-                  <td class="has-text-right">{{ fmtNum(user.points) }}</td>
-                  <td class="has-text-right">{{ fmtNum(user.affiliation_points) }}</td>
-                  <td class="has-text-right">{{ fmtNum(hqSaved(user).pg_grupal_sin_propio) }}</td>
-                  <td class="has-text-right has-text-grey">{{ fmtNum(user.total_org) }}</td>
-                  <td class="has-text-right">{{ fmtNum(hqSaved(user).activos_directos) }}</td>
-                  <td class="is-size-7 has-text-grey leg-cell">{{ fmtLegs(user.total) }}</td>
-
-                  <td class="has-text-right has-text-weight-bold col-total-res">{{ fmtMoney(user.residual_bonus) }}</td>
-                  <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(user, 1)) }}</td>
-                  <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(user, 2)) }}</td>
-                  <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(user, 3)) }}</td>
-                  <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(user, 4)) }}</td>
-                  <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen(user, 5)) }}</td>
-                  <td class="has-text-right is-size-7">{{ fmtMoneyResidualCol(residualGen6Plus(user)) }}</td>
-                  <td class="has-text-centered">{{ residualLineCount(user) }}</td>
-                  <td class="is-size-7 detail-cell col-detail">{{ fmtResidualDetailFull(user) }}</td>
-                  <td class="is-size-7 bonus-cell">{{ fmtPaysCierre(user.pays_cierre_rango) }}</td>
-
-                  <td class="is-size-7 has-text-grey">{{ shortId(user.parentId) }}</td>
+                  <td class="col-points">
+                    <strong>Total: {{ fmtNum(user.total_org) }}</strong>
+                    <div class="legs-box" v-if="user.total && user.total.length">
+                      <div v-for="(pts, idx) in user.total" :key="'saved-leg-' + ci + '-' + i + '-' + idx" class="leg-row">
+                        <span>Pierna {{ idx + 1 }}</span>
+                        <strong>{{ fmtNum(pts) }} pts</strong>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-rank">
+                    <span class="tag is-warning is-light summary-rank-tag">{{ rankLabel(user.rank) }}</span>
+                  </td>
+                  <td class="col-residual">
+                    <strong class="residual-total">S/ {{ fmtMoney(user.residual_bonus) }}</strong>
+                    <div class="residual-detail">{{ fmtResidualDetailShort(user) }}</div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -375,6 +277,27 @@ export default {
         })
         .join(' | ')
     },
+    fmtResidualDetailShort(row) {
+      const arr = row.residual_bonus_arr
+      if (!arr || !arr.length) return '—'
+      return arr
+        .map((d) => {
+          const nivel = (d.n != null ? d.n : 0) + 1
+          const nombre = d.name || '—'
+          const base = d.val != null ? `PR ${d.val}` : 'PR —'
+          const pct = d.r != null ? `${(Number(d.r) * 100).toFixed(2)}%` : '—'
+          const monto = Number(d.amount || 0).toLocaleString('es-PE', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })
+          return `Nv.${nivel} ${nombre} · ${base} · ${pct} → S/ ${monto}`
+        })
+        .join(' | ')
+    },
+    rankLabel(rank) {
+      if (!rank || rank === 'none') return 'SIN RANGO'
+      return String(rank).replace(/_/g, ' ')
+    },
     fmtPaysCierre(pays) {
       const p = pays || []
       if (!p.length) return '—'
@@ -432,81 +355,82 @@ export default {
   border: 1px solid #dbdbdb;
   border-radius: 6px;
 }
-.group-persona { background: #e8f4fc !important; color: #234; }
-.group-rango { background: #f0e8fc !important; color: #234; }
-.group-volumen { background: #fff8e8 !important; color: #234; }
-.group-residual { background: #e8fcf0 !important; color: #234; }
-.group-soporte { background: #f5f5f5 !important; color: #234; }
 .closure-table thead th {
   vertical-align: bottom;
-  font-size: 0.72rem;
-  padding: 0.45em 0.35em;
-}
-.closure-group-row th {
-  text-align: center;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 0.4em 0.25em;
-  border-bottom: 2px solid #b5b5b5 !important;
+  font-size: 0.78rem;
+  padding: 0.85rem 0.75rem;
+  color: #4a4a4a;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 .closure-table td,
 .closure-table tbody th {
-  vertical-align: middle;
-  font-size: 0.76rem;
-  padding: 0.4em 0.32em;
+  vertical-align: top;
+  font-size: 0.92rem;
+  padding: 1rem 0.75rem;
 }
-.closure-table tbody tr:hover .sticky-num,
-.closure-table tbody tr:hover .sticky-name {
-  background: #f5f8ff !important;
+.closure-summary-table .col-num {
+  width: 3rem;
+  text-align: center;
 }
-.sticky-num,
-.sticky-name {
-  position: sticky;
-  background: inherit;
-  z-index: 2;
-  box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.12);
+.closure-summary-table .col-name {
+  width: 22%;
+  min-width: 170px;
 }
-.sticky-num {
-  left: 0;
-  min-width: 2.2rem;
+.closure-summary-table .col-points {
+  width: 46%;
+  min-width: 320px;
 }
-.sticky-name {
-  left: 2.2rem;
+.closure-summary-table .col-rank {
+  width: 12%;
+  min-width: 130px;
+  text-align: center;
 }
-thead .sticky-num,
-thead .sticky-name {
-  z-index: 3;
-  background: #fafafa;
+.closure-summary-table .col-residual {
+  width: 20%;
+  min-width: 190px;
 }
 .closure-table .closure-name {
-  max-width: 200px;
-  min-width: 140px;
   white-space: normal;
   word-break: break-word;
 }
-.closure-table .detail-cell {
-  min-width: 200px;
-  max-width: 340px;
+.legs-box {
+  margin-top: 0.75rem;
+  max-width: 520px;
+  max-height: 10.5rem;
+  overflow-y: auto;
+  border: 1px solid #e6e9ef;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+.leg-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px dashed #d8dde6;
+  font-size: 0.82rem;
+}
+.leg-row:last-child {
+  border-bottom: 0;
+}
+.leg-row strong,
+.residual-total {
+  color: #1f7a4d;
+}
+.summary-rank-tag {
+  font-weight: 700;
+  color: #8a5a00 !important;
+}
+.residual-total {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.residual-detail {
+  color: #4a4a4a;
+  font-size: 0.82rem;
+  line-height: 1.35;
   white-space: normal;
   word-break: break-word;
-}
-.closure-table .leg-cell {
-  max-width: 120px;
-  white-space: normal;
-  word-break: break-all;
-  font-size: 0.68rem;
-}
-.closure-table .bonus-cell {
-  max-width: 120px;
-  white-space: normal;
-  word-break: break-word;
-  font-size: 0.68rem;
-}
-.col-total-res {
-  background: rgba(72, 199, 142, 0.14);
-  border-left: 1px solid #ccc;
-}
-.col-detail {
-  background: rgba(0, 0, 0, 0.02);
 }
 </style>

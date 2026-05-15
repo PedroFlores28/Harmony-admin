@@ -171,13 +171,17 @@
                 <div class="control">
                   <div class="select is-fullwidth">
                     <select v-model="editingUser.rank">
-                      <option value="none">Ninguno</option>
-                      <option value="active">ACTIVO</option>
-                      <option value="star">ESTRELLA</option>
-                      <option value="silver">PLATA</option>
-                      <option value="gold">ORO</option>
-                      <option value="ruby">RUBY</option>
-                      <option value="emerald">ESMERALDA</option>
+                      <option value="SIN_RANGO">Sin rango</option>
+                      <option value="MILLONARIO">Millonario</option>
+                      <option value="ORO">Oro</option>
+                      <option value="ESMERALDA">Esmeralda</option>
+                      <option value="PLATINO">Platino</option>
+                      <option value="DIAMANTE">Diamante</option>
+                      <option value="DIAMANTE_AZUL">Diamante Azul</option>
+                      <option value="DIAMANTE_EJECUTIVO">Diamante Ejecutivo</option>
+                      <option value="DOBLE_DIAMANTE">Doble Diamante</option>
+                      <option value="DIAMANTE_CORONA">Diamante Corona</option>
+                      <option value="TOP_HARMONY">Top Harmony</option>
                     </select>
                   </div>
                 </div>
@@ -573,7 +577,7 @@ export default {
         lastName: "",
         dni: "",
         password: "",
-        rank: "user",
+        rank: "",
         points: 0,
         city: "",
         parentDni: "",
@@ -827,7 +831,7 @@ export default {
         lastName: user.lastName || "",
         dni: user.dni || "",
         password: "", // Siempre vacío para nueva contraseña
-        rank: user.rank || "user",
+        rank: this.normalizeRankValue(user.rank),
         points: user.points || 0,
         city: user.city || "",
         parentDni: user.parent && user.parent.dni ? user.parent.dni : "",
@@ -959,7 +963,7 @@ export default {
           _dni: this.editingUser.dni || "",
           _password: this.editingUser.password || "",
           _points: this.editingUser.points || 0,
-          _rank: this.editingUser.rank || "user",
+          _rank: this.normalizeRankValue(this.editingUser.rank),
           city: this.editingUser.city || "",
           _parent_dni: this.editingUser.parentDni || "",
           plan: this.editingUser.plan || "",
@@ -981,7 +985,7 @@ export default {
             name: this.editingUser.name,
             lastName: this.editingUser.lastName,
             points: this.editingUser.points,
-            rank: this.editingUser.rank,
+            rank: this.normalizeRankValue(this.editingUser.rank),
             dni: this.editingUser.dni,
             city: this.editingUser.city,
             parent: {
@@ -1047,14 +1051,41 @@ export default {
     },
 
     getRankLabel(val) {
-      if (val == "none") return "Ninguno";
-      if (val == "active") return "ACTIVO";
-      if (val == "star") return "ESTRELLA";
-      if (val == "silver") return "PLATA";
-      if (val == "ruby") return "RUBY";
-      if (val == "gold") return "ORO";
-      if (val == "emerald") return "ESMERALDA";
-      return val;
+      const rank = this.normalizeRankValue(val);
+      const rankLabels = {
+        MILLONARIO: "Millonario",
+        ORO: "Oro",
+        ESMERALDA: "Esmeralda",
+        PLATINO: "Platino",
+        DIAMANTE: "Diamante",
+        DIAMANTE_AZUL: "Diamante Azul",
+        DIAMANTE_EJECUTIVO: "Diamante Ejecutivo",
+        DOBLE_DIAMANTE: "Doble Diamante",
+        DIAMANTE_CORONA: "Diamante Corona",
+        TOP_HARMONY: "Top Harmony",
+      };
+      return rankLabels[rank] || "Sin rango";
+    },
+
+    normalizeRankValue(val) {
+      const rank = String(val || "")
+        .trim()
+        .toUpperCase()
+        .replace(/\s+/g, "_")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+      if (
+        !rank ||
+        rank === "NONE" ||
+        rank === "NO_RANK" ||
+        rank === "SINRANGO" ||
+        rank === "ACTIVE"
+      ) {
+        return "SIN_RANGO";
+      }
+
+      return rank;
     },
 
     getPlanLabel(val) {

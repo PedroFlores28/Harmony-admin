@@ -74,11 +74,16 @@
                 </select>
                 <select v-model="rankFilter" class="form-select">
                   <option value="">Todos los rangos</option>
-                  <option value="bronze">Bronce</option>
-                  <option value="silver">Plata</option>
-                  <option value="gold">Oro</option>
-                  <option value="platinum">Platino</option>
-                  <option value="diamond">Diamante</option>
+                  <option value="MILLONARIO">Millonario</option>
+                  <option value="ORO">Oro</option>
+                  <option value="ESMERALDA">Esmeralda</option>
+                  <option value="PLATINO">Platino</option>
+                  <option value="DIAMANTE">Diamante</option>
+                  <option value="DIAMANTE_AZUL">Diamante Azul</option>
+                  <option value="DIAMANTE_EJECUTIVO">Diamante Ejecutivo</option>
+                  <option value="DOBLE_DIAMANTE">Doble Diamante</option>
+                  <option value="DIAMANTE_CORONA">Diamante Corona</option>
+                  <option value="TOP_HARMONY">Top Harmony</option>
                 </select>
               </div>
             </div>
@@ -176,7 +181,7 @@
                               class="member-rank"
                               :class="getRankClass(node.rank)"
                             >
-                              {{ node.rank || "Bronce" }}
+                              {{ getRankLabel(node.rank) }}
                             </span>
                             <span
                               class="member-status"
@@ -252,7 +257,7 @@
                 <div class="detail-item">
                   <label>Rango:</label>
                   <span :class="getRankClass(selectedMember.rank)">
-                    {{ selectedMember.rank || "Bronce" }}
+                    {{ getRankLabel(selectedMember.rank) }}
                   </span>
                 </div>
                 <div class="detail-item">
@@ -382,7 +387,18 @@ export default {
     },
 
     getRandomRank() {
-      const ranks = ["Bronce", "Plata", "Oro", "Platino", "Diamante"];
+      const ranks = [
+        "MILLONARIO",
+        "ORO",
+        "ESMERALDA",
+        "PLATINO",
+        "DIAMANTE",
+        "DIAMANTE_AZUL",
+        "DIAMANTE_EJECUTIVO",
+        "DOBLE_DIAMANTE",
+        "DIAMANTE_CORONA",
+        "TOP_HARMONY",
+      ];
       return ranks[Math.floor(Math.random() * ranks.length)];
     },
 
@@ -466,13 +482,34 @@ export default {
 
     getRankClass(rank) {
       const rankClasses = {
-        Bronce: "rank-bronze",
-        Plata: "rank-silver",
-        Oro: "rank-gold",
-        Platino: "rank-platinum",
-        Diamante: "rank-diamond",
+        MILLONARIO: "rank-millonario",
+        ORO: "rank-oro",
+        ESMERALDA: "rank-esmeralda",
+        PLATINO: "rank-platino",
+        DIAMANTE: "rank-diamante",
+        DIAMANTE_AZUL: "rank-diamante-azul",
+        DIAMANTE_EJECUTIVO: "rank-diamante-ejecutivo",
+        DOBLE_DIAMANTE: "rank-doble-diamante",
+        DIAMANTE_CORONA: "rank-diamante-corona",
+        TOP_HARMONY: "rank-top-harmony",
       };
-      return rankClasses[rank] || "rank-bronze";
+      return rankClasses[rank] || "rank-sin-rango";
+    },
+
+    getRankLabel(rank) {
+      const rankLabels = {
+        MILLONARIO: "Millonario",
+        ORO: "Oro",
+        ESMERALDA: "Esmeralda",
+        PLATINO: "Platino",
+        DIAMANTE: "Diamante",
+        DIAMANTE_AZUL: "Diamante Azul",
+        DIAMANTE_EJECUTIVO: "Diamante Ejecutivo",
+        DOBLE_DIAMANTE: "Doble Diamante",
+        DIAMANTE_CORONA: "Diamante Corona",
+        TOP_HARMONY: "Top Harmony",
+      };
+      return rankLabels[rank] || "Sin rango";
     },
 
     getStatusClass(status) {
@@ -959,29 +996,59 @@ export default {
   font-weight: 500;
 }
 
-.rank-bronze {
-  background: #cd7f32;
+.rank-sin-rango {
+  background: #6c757d;
   color: white;
 }
 
-.rank-silver {
-  background: #c0c0c0;
+.rank-millonario {
+  background: #5c0f39;
   color: white;
 }
 
-.rank-gold {
+.rank-oro {
   background: #ffd700;
   color: #333;
 }
 
-.rank-platinum {
+.rank-esmeralda {
+  background: #2ecc71;
+  color: white;
+}
+
+.rank-platino {
   background: #e5e4e2;
   color: #333;
 }
 
-.rank-diamond {
+.rank-diamante {
   background: #b9f2ff;
   color: #333;
+}
+
+.rank-diamante-azul {
+  background: #0476d9;
+  color: white;
+}
+
+.rank-diamante-ejecutivo {
+  background: #243b6b;
+  color: white;
+}
+
+.rank-doble-diamante {
+  background: #7dd3fc;
+  color: #123;
+}
+
+.rank-diamante-corona {
+  background: #8b5cf6;
+  color: white;
+}
+
+.rank-top-harmony {
+  background: #111827;
+  color: white;
 }
 
 .member-status {
