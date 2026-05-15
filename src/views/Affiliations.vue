@@ -85,6 +85,7 @@
           :items-per-page="itemsPerPage"
           search-placeholder="Buscar por nombre, DNI o oficina..."
           :filters="tableFilters"
+          :row-class="tableRowClass"
           @action="handleTableAction"
           @item-action="handleItemAction"
           @search="handleSearch"
@@ -92,6 +93,12 @@
           @page-change="handlePageChange"
           @page-size-change="handlePageSizeChange"
         >
+          <template #header-comprobante>
+            <div class="comprobante-header">
+              <span>Comprobante</span>
+              <span class="comprobante-header__right">Entrega</span>
+            </div>
+          </template>
           <template #cell-date="{ row }">
             <div style="display:flex; flex-direction:column; gap:4px;">
               <span>{{ formatDateTime(row.date) }}</span>
@@ -157,23 +164,82 @@
               <span v-else-if="row.voucher2 && row.voucher2.url">{{ row.voucher2.url }}</span>
             </div>
           </template>
-          <template #cell-type="{ value }">
-            <span v-if="value === 'upgrade'" class="tag is-warning"
-              >Upgrade</span
+          <template #cell-payment_split="{ row }">
+            <div
+              v-if="paymentSplitDisplay(row.raw).legacyMissing"
+              style="display:flex; flex-direction:column; gap:4px; line-height:1.15;"
             >
-            <span v-else class="tag is-info">Afiliación</span>
+              <span class="tag is-warning is-light" style="align-self:flex-start;">Histórico</span>
+              <small style="color:#6b7280;">Sin detalle de abono guardado</small>
+            </div>
+            <div
+              v-else
+              style="display:flex; flex-direction:column; gap:4px; line-height:1.15;"
+            >
+              <span
+                class="tag is-light"
+                style="align-self:flex-start;"
+                :class="{
+                  'is-info': paymentSplitDisplay(row.raw).mode === 'mixed',
+                  'is-success': paymentSplitDisplay(row.raw).mode === 'balance_only',
+                  'is-dark': paymentSplitDisplay(row.raw).mode === 'external_only',
+                }"
+              >{{ paymentSplitDisplay(row.raw).modeLabel }}</span>
+              <template v-if="paymentSplitDisplay(row.raw).aggregateBalanceDisplay">
+                <small style="color:#374151; font-weight:700;">
+                  Saldo disp.: S/
+                  {{ paymentSplitDisplay(row.raw).totalInternalPaid.toFixed(2) }}
+                </small>
+              </template>
+              <template v-else>
+                <small
+                  v-if="paymentSplitDisplay(row.raw).paid_virtual > 0"
+                  style="color:#6b7280;"
+                >No disp.: S/ {{ paymentSplitDisplay(row.raw).paid_virtual.toFixed(2) }}</small>
+                <small style="color:#374151; font-weight:700;">
+                  Saldo disp.: S/ {{ paymentSplitDisplay(row.raw).paid_balance.toFixed(2) }}
+                </small>
+              </template>
+              <small style="color:#6b7280;">
+                Faltante: S/ {{ paymentSplitDisplay(row.raw).due.toFixed(2) }}
+              </small>
+            </div>
           </template>
-          <template #cell-products_delivered="{ row }">
-            <span 
-              class="delivery-badge" 
-              :class="{
-                'delivery-delivered': row.products_delivered,
-                'delivery-pending': !row.products_delivered
-              }"
-            >
-              <i :class="row.products_delivered ? 'fas fa-check-circle' : 'fas fa-clock'"></i>
-              {{ row.products_delivered ? 'Entregado' : 'Pendiente' }}
-            </span>
+          <template #cell-pay_method="{ row }">
+            {{ formatPayMethod(row.raw) }}
+          </template>
+          <template #cell-comprobante="{ row }">
+            <div class="payment-step-stack">
+              <div class="payment-step-top-row">
+                <div class="payment-step-top-row__fin">
+                  <span
+                    class="status-badge"
+                    :class="{
+                      'status-approved': row.status === 'approved',
+                      'status-pending': row.status === 'pending',
+                      'status-rejected': row.status === 'rejected',
+                      'status-cancelled': row.status === 'cancelled',
+                    }"
+                  >
+                    {{ row.status | status }}
+                  </span>
+                </div>
+                <div class="payment-step-top-row__del">
+                  <span
+                    class="delivery-badge"
+                    :class="{
+                      'delivery-delivered': row.products_delivered,
+                      'delivery-pending': !row.products_delivered,
+                    }"
+                  >
+                    <i :class="row.products_delivered ? 'fas fa-check-circle' : 'fas fa-clock'"></i>
+                    {{ row.products_delivered ? "Entregado" : "Pendiente" }}
+                  </span>
+                </div>
+              </div>
+              <small v-if="row.type === 'upgrade'" class="tag is-warning is-light" style="margin-top:6px;">Upgrade</small>
+              <small v-else class="tag is-info is-light" style="margin-top:6px;">Afiliación</small>
+            </div>
           </template>
         </ModernTable>
       </div>
@@ -539,15 +605,15 @@ export default {
           sortable: true,
         },
         {
+          key: "products",
+          label: "Productos",
+          sortable: false,
+        },
+        {
           key: "total",
           label: "Total",
           sortable: true,
           type: "currency",
-        },
-        {
-          key: "products",
-          label: "Productos",
-          sortable: false,
         },
         {
           key: "pay_method",
@@ -560,23 +626,14 @@ export default {
           sortable: false,
         },
         {
-          key: "status",
-          label: "Estado",
-          sortable: true,
-          type: "status",
-        },
-        {
-          key: "type",
-          label: "Tipo",
+          key: "payment_split",
+          label: "Monto Faltante",
           sortable: false,
-          formatter: (value, row) =>
-            value === "upgrade" ? "Upgrade" : "Afiliación",
         },
         {
-          key: "products_delivered",
-          label: "Productos Entregados",
-          sortable: true,
-          type: "boolean",
+          key: "comprobante",
+          label: "Comprobante | Entrega",
+          sortable: false,
         },
       ],
       tableActions: [
@@ -1148,14 +1205,100 @@ export default {
       return "N/A";
     },
 
+    tableRowClass(item) {
+      if (!item || item._rowType === "separator") return null;
+      if (String(item.status || "").toLowerCase() === "cancelled")
+        return "table-row--cancelled";
+      return null;
+    },
+    paymentSplitDisplay(record) {
+      const pb = record && record.payment_breakdown;
+      if (pb && pb.legacy_missing_amounts) {
+        return { legacyMissing: true };
+      }
+      let paid_virtual = 0;
+      let paid_balance = 0;
+      let due = 0;
+      let mode = "external_only";
+      if (pb) {
+        paid_virtual = Number(pb.paid_virtual || 0);
+        paid_balance = Number(pb.paid_balance || 0);
+        due = Number(pb.due || 0);
+        mode = pb.mode || "external_only";
+      } else if (record && Array.isArray(record.amounts) && record.amounts.length >= 3) {
+        paid_virtual = Number(record.amounts[0] || 0);
+        paid_balance = Number(record.amounts[1] || 0);
+        due = Number(record.amounts[2] || 0);
+        const usedBalance =
+          record.use_balance === true ||
+          record.check === true ||
+          paid_virtual > 0 ||
+          paid_balance > 0;
+        if (usedBalance) {
+          mode = due <= 0.0001 ? "balance_only" : "mixed";
+        } else {
+          mode = "external_only";
+        }
+      } else {
+        return { legacyMissing: true };
+      }
+      const modeLabel =
+        mode === "balance_only"
+          ? "Todo con saldo"
+          : mode === "mixed"
+          ? "Mixto (saldo + voucher)"
+          : "Sin saldo (solo voucher/banco)";
+      const totalInternal = paid_virtual + paid_balance;
+      const aggregateBalanceDisplay =
+        mode === "balance_only" && due <= 0.0001 && totalInternal > 0;
+      return {
+        legacyMissing: false,
+        paid_virtual,
+        paid_balance,
+        due,
+        mode,
+        modeLabel,
+        aggregateBalanceDisplay,
+        totalInternalPaid: totalInternal,
+      };
+    },
+    formatPaymentSplitExport(record) {
+      const split = this.paymentSplitDisplay(record);
+      if (split.legacyMissing) return "Histórico (sin detalle)";
+      const parts = [split.modeLabel];
+      if (split.aggregateBalanceDisplay) {
+        parts.push(`Saldo disp.: S/ ${split.totalInternalPaid.toFixed(2)}`);
+      } else {
+        if (split.paid_virtual > 0) {
+          parts.push(`No disp.: S/ ${split.paid_virtual.toFixed(2)}`);
+        }
+        parts.push(`Saldo disp.: S/ ${split.paid_balance.toFixed(2)}`);
+      }
+      parts.push(`Faltante: S/ ${split.due.toFixed(2)}`);
+      return parts.join(" | ");
+    },
     formatPayMethod(affiliation) {
       if (affiliation.pay_method === "cash") {
         return "Efectivo";
       }
       if (affiliation.pay_method === "bank") {
-        return `Banco - ${affiliation.bank}`;
+        if (affiliation.bank_info) {
+          const methodName = affiliation.bank_info.name || affiliation.bank || "";
+          const methodType = affiliation.bank_info.type || "";
+          if (
+            String(methodType).toLowerCase().includes("efectivo") ||
+            String(methodName).toLowerCase().includes("efectivo")
+          ) {
+            return "Efectivo";
+          }
+          return `${methodName} - ${methodType || "Transferencia"}`;
+        }
+        return `Transferencia - ${affiliation.bank || "No especificado"}`;
       }
-      return affiliation.pay_method;
+      if (affiliation.pay_method === "wallet" || affiliation.pay_method === "balance") {
+        return "Saldo";
+      }
+      return affiliation.pay_method || "No especificado";
     },
 
     formatVoucher(affiliation) {
@@ -1458,6 +1601,7 @@ export default {
             Plan: plan,
             "Total Afiliación": total,
             "Medio de Pago": medioPago,
+            "Abono (saldo / transferencia)": this.formatPaymentSplitExport(affiliation),
             Voucher: voucher,
             "Nº de Operación": numeroOperacion,
             Estado: estado,
@@ -1978,6 +2122,60 @@ function parseDate(dateStr) {
 }
 
 /* Delivery Badge */
+.comprobante-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+.comprobante-header__right {
+  text-align: right;
+  flex-shrink: 0;
+}
+.payment-step-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+.payment-step-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.payment-step-top-row__fin,
+.payment-step-top-row__del {
+  flex: 1;
+  min-width: 0;
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+.status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.status-cancelled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
 .delivery-badge {
   display: inline-flex;
   align-items: center;
