@@ -36,7 +36,13 @@
                 <th class="col-num">#</th>
                 <th class="col-name">Nombre</th>
                 <th class="col-points">Pts. grupales</th>
+                <th class="col-personal">Puntos personales</th>
                 <th class="col-rank">Rango cerrado</th>
+                <th class="col-bono">Bono logro</th>
+                <th class="col-bono">Bono recalificación</th>
+                <th class="col-check">Bono viaje</th>
+                <th class="col-check">Bono auto</th>
+                <th class="col-check">Bono casa</th>
                 <th class="col-residual">Bono residual</th>
               </tr>
             </thead>
@@ -56,9 +62,15 @@
                     </div>
                   </div>
                 </td>
+                <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(node)) }}</td>
                 <td class="col-rank">
                   <span class="tag is-warning is-light summary-rank-tag">{{ rankLabel(node.rank) }}</span>
                 </td>
+                <td class="col-bono">S/ {{ fmtMoney(closureBonoLogro(node)) }}</td>
+                <td class="col-bono">S/ {{ fmtMoney(closureBonoRecalificacion(node)) }}</td>
+                <td class="col-check has-text-centered"><span :class="closureCheckClass(closureBonusViajeQualifies(node))" :title="closureBonusPlaceholderTitle">{{ closureCheckMark(closureBonusViajeQualifies(node)) }}</span></td>
+                <td class="col-check has-text-centered"><span :class="closureCheckClass(closureBonusAutoQualifies(node))" :title="closureBonusPlaceholderTitle">{{ closureCheckMark(closureBonusAutoQualifies(node)) }}</span></td>
+                <td class="col-check has-text-centered"><span :class="closureCheckClass(closureBonusCasaQualifies(node))" :title="closureBonusPlaceholderTitle">{{ closureCheckMark(closureBonusCasaQualifies(node)) }}</span></td>
                 <td class="col-residual">
                   <strong class="residual-total">S/ {{ fmtMoney(node.residual_bonus) }}</strong>
                   <div class="residual-detail">{{ fmtResidualDetailShort(node) }}</div>
@@ -98,7 +110,13 @@
                   <th class="col-num">#</th>
                   <th class="col-name">Nombre</th>
                   <th class="col-points">Pts. grupales</th>
+                  <th class="col-personal">Puntos personales</th>
                   <th class="col-rank">Rango cerrado</th>
+                  <th class="col-bono">Bono logro</th>
+                  <th class="col-bono">Bono recalificación</th>
+                  <th class="col-check">Bono viaje</th>
+                  <th class="col-check">Bono auto</th>
+                  <th class="col-check">Bono casa</th>
                   <th class="col-residual">Bono residual</th>
                 </tr>
               </thead>
@@ -118,9 +136,15 @@
                       </div>
                     </div>
                   </td>
+                  <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(user)) }}</td>
                   <td class="col-rank">
                     <span class="tag is-warning is-light summary-rank-tag">{{ rankLabel(user.rank) }}</span>
                   </td>
+                  <td class="col-bono">S/ {{ fmtMoney(closureBonoLogro(user)) }}</td>
+                  <td class="col-bono">S/ {{ fmtMoney(closureBonoRecalificacion(user)) }}</td>
+                  <td class="col-check has-text-centered"><span :class="closureCheckClass(closureBonusViajeQualifies(user))" :title="closureBonusPlaceholderTitle">{{ closureCheckMark(closureBonusViajeQualifies(user)) }}</span></td>
+                  <td class="col-check has-text-centered"><span :class="closureCheckClass(closureBonusAutoQualifies(user))" :title="closureBonusPlaceholderTitle">{{ closureCheckMark(closureBonusAutoQualifies(user)) }}</span></td>
+                  <td class="col-check has-text-centered"><span :class="closureCheckClass(closureBonusCasaQualifies(user))" :title="closureBonusPlaceholderTitle">{{ closureCheckMark(closureBonusCasaQualifies(user)) }}</span></td>
                   <td class="col-residual">
                     <strong class="residual-total">S/ {{ fmtMoney(user.residual_bonus) }}</strong>
                     <div class="residual-detail">{{ fmtResidualDetailShort(user) }}</div>
@@ -172,6 +196,10 @@ export default {
         activFull: (this.tree || []).filter((e) => e.activated).length,
         activSimple: (this.tree || []).filter((e) => e._activated).length,
       }
+    },
+    /** Tooltip mientras los bonos viaje/auto/casa no tienen reglas en backend */
+    closureBonusPlaceholderTitle() {
+      return 'Referencial: la calificación de este bono aún no está implementada.'
     },
   },
   created() {
@@ -298,6 +326,47 @@ export default {
       if (!rank || rank === 'none') return 'SIN RANGO'
       return String(rank).replace(/_/g, ' ')
     },
+    /** Lista de pagos de calificación en preview (_pays) o en cierre guardado (pays_cierre_rango). */
+    closurePaysList(row) {
+      const arr = row._pays || row.pays_cierre_rango
+      return Array.isArray(arr) ? arr : []
+    },
+    closurePersonalPoints(row) {
+      const p = row.points
+      if (p === null || p === undefined || p === '') return null
+      return p
+    },
+    closureBonoLogro(row) {
+      let s = 0
+      for (const pay of this.closurePaysList(row)) {
+        if (pay && pay.type === 'recalificacion') continue
+        s += Number(pay.value || 0)
+      }
+      return s
+    },
+    closureBonoRecalificacion(row) {
+      let s = 0
+      for (const pay of this.closurePaysList(row)) {
+        if (pay && pay.type === 'recalificacion') s += Number(pay.value || 0)
+      }
+      return s
+    },
+    closureCheckMark(ok) {
+      return ok ? '✓' : '✗'
+    },
+    closureCheckClass(ok) {
+      return ok ? 'closure-check closure-check--yes' : 'closure-check closure-check--no'
+    },
+    /** Placeholder hasta definir reglas de negocio en el servidor */
+    closureBonusViajeQualifies(_row) {
+      return false
+    },
+    closureBonusAutoQualifies(_row) {
+      return false
+    },
+    closureBonusCasaQualifies(_row) {
+      return false
+    },
     fmtPaysCierre(pays) {
       const p = pays || []
       if (!p.length) return '—'
@@ -309,16 +378,9 @@ export default {
     },
     async GET() {
       this.loading = true
-      try {
-        const { data } = await api.closeds.GET()
-        const list = data && Array.isArray(data.closeds) ? data.closeds : []
-        this.closeds = list.slice().reverse()
-      } catch (e) {
-        console.error("closeds GET", e)
-        this.closeds = []
-      } finally {
-        this.loading = false
-      }
+      const { data } = await api.closeds.GET()
+      this.loading = false
+      this.closeds = data.closeds.reverse()
     },
     async closed() {
       const { data } = await api.closeds.POST({ action: 'new' })
@@ -378,17 +440,49 @@ export default {
   min-width: 170px;
 }
 .closure-summary-table .col-points {
-  width: 46%;
-  min-width: 320px;
+  width: 28%;
+  min-width: 240px;
 }
-.closure-summary-table .col-rank {
-  width: 12%;
-  min-width: 130px;
+.closure-summary-table .col-personal {
+  width: 7%;
+  min-width: 88px;
   text-align: center;
 }
+.closure-summary-table .col-rank {
+  width: 9%;
+  min-width: 110px;
+  text-align: center;
+}
+.closure-summary-table .col-bono {
+  width: 7%;
+  min-width: 96px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+.closure-summary-table .col-check {
+  width: 4.5%;
+  min-width: 72px;
+  text-align: center;
+  vertical-align: middle;
+}
 .closure-summary-table .col-residual {
-  width: 20%;
-  min-width: 190px;
+  width: 16%;
+  min-width: 170px;
+}
+.closure-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.closure-check--yes {
+  color: #1f7a4d;
+}
+.closure-check--no {
+  color: #c92a2a;
 }
 .closure-table .closure-name {
   white-space: normal;
