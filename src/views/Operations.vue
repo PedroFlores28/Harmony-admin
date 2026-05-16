@@ -74,15 +74,29 @@
           <p>Ingrese el DNI del socio para abrir su sesión de compras en este panel.</p>
         </div>
 
-        <div v-else class="iframe-wrapper fade-in">
-          <iframe
-            ref="appIframe"
-            :key="iframeKey"
-            :src="iframeSrc"
-            class="operations-iframe"
-            title="Sesión de compras del socio"
-            @load="handleIframeLoad"
-          />
+        <div v-else class="tab-launch-wrapper fade-in">
+          <div class="tab-launch-card">
+            <div class="tab-launch-icon">
+              <i class="fas fa-external-link-alt"></i>
+            </div>
+            <h3>Sesión lista para {{ activeUser ? activeUser.name || activeDni : activeDni }}</h3>
+            <p>La sesión fue generada exitosamente. Haz clic para abrir la cuenta del socio en una nueva pestaña.</p>
+            <button class="tab-launch-btn" @click="openUserTab">
+              <i class="fas fa-user-check"></i>
+              Abrir como Socio
+            </button>
+            <div class="tab-launch-links">
+              <button class="tab-link-secondary" @click="openUserTab('affiliation')">
+                <i class="fas fa-id-card"></i> Nueva Afiliación
+              </button>
+              <button class="tab-link-secondary" @click="openUserTab('activation')">
+                <i class="fas fa-box"></i> Activación
+              </button>
+              <button class="tab-link-secondary" @click="openUserTab('dashboard')">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -225,6 +239,25 @@ export default {
         this.lookupLoading = false
       }
     },
+    openUserTab(forcePath) {
+      if (!this.activeSession || !this.activeDni) return;
+      
+      const targetPath = forcePath || this.path || 'affiliation';
+      const affiliated = this.activeUser ? (this.activeUser.affiliated !== false) : true;
+      
+      const params = new URLSearchParams({
+        session: this.activeSession,
+        dni: String(this.activeDni),
+        name: this.activeUser ? (this.activeUser.name || '') : '',
+        lastName: this.activeUser ? (this.activeUser.lastName || '') : '',
+        path: targetPath,
+        affiliated: String(affiliated)
+      });
+      
+      const url = `${APP}/${targetPath.replace(/^\//, '')}?${params.toString()}`;
+      console.log('Abriendo sesión en nueva pestaña:', url);
+      window.open(url, '_blank');
+    },
     clearAccess() {
       this.activeDni = null
       this.activeUser = null
@@ -243,6 +276,110 @@ export default {
   min-height: calc(100vh - 60px);
   background: #fdfafc;
 }
+
+.operations-container {
+  padding-bottom: 24px;
+}
+
+/* Tab Launch Card */
+.tab-launch-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.tab-launch-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(92, 15, 57, 0.12);
+  border: 1px solid #f0e6ec;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+}
+
+.tab-launch-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #5c0f39, #8b1a5c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.tab-launch-icon i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.tab-launch-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 12px;
+}
+
+.tab-launch-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.tab-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #5c0f39, #8b1a5c);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.tab-launch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(92, 15, 57, 0.35);
+}
+
+.tab-launch-links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tab-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8f0f5;
+  color: #5c0f39;
+  border: 1px solid #e8d0dc;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-link-secondary:hover {
+  background: #5c0f39;
+  color: #fff;
+  border-color: #5c0f39;
+}
+
 
 .operations-container {
   padding-bottom: 24px;
