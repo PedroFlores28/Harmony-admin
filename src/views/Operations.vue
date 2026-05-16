@@ -82,7 +82,7 @@
 import Layout from '@/views/Layout'
 import api from '@/api'
 
-const APP = process.env.VUE_APP_APP
+const APP = process.env.VUE_APP_APP || 'https://harmonyy-x5sr.vercel.app'
 
 export default {
   components: { Layout },
