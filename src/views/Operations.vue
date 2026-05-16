@@ -255,8 +255,9 @@ export default {
         affiliated: String(affiliated)
       });
       
-      const url = `${APP}/${targetPath.replace(/^\//, '')}?${params.toString()}`;
-      console.log('Abriendo sesión en nueva pestaña:', url);
+      // Usar auth-relay.html (mismo dominio) para escribir localStorage sin restricciones
+      const url = `${APP}/auth-relay.html?${params.toString()}`;
+      console.log('Abriendo sesión via relay:', url);
       window.open(url, '_blank');
     },
     clearAccess() {
