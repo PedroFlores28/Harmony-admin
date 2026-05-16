@@ -78,7 +78,8 @@
 <script>
 import Layout from '@/views/Layout'
 
-const APP = process.env.VUE_APP_APP
+// URL de la App del socio (Harmony App)
+const APP = 'https://harmonyy-x5sr.vercel.app'
 
 export default {
   components: { Layout },
