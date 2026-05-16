@@ -242,7 +242,8 @@ export default {
     openUserTab(forcePath) {
       if (!this.activeSession || !this.activeDni) return;
       
-      const targetPath = forcePath || this.path || 'affiliation';
+      // forcePath puede ser un MouseEvent si se llama sin argumento — ignorarlo
+      const targetPath = (typeof forcePath === 'string') ? forcePath : (this.path || 'affiliation');
       const affiliated = this.activeUser ? (this.activeUser.affiliated !== false) : true;
       
       const params = new URLSearchParams({
