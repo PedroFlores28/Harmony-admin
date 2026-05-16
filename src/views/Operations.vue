@@ -76,10 +76,12 @@
 
         <div v-else class="iframe-wrapper fade-in">
           <iframe
+            ref="appIframe"
             :key="iframeKey"
             :src="iframeSrc"
             class="operations-iframe"
             title="Sesión de compras del socio"
+            @load="handleIframeLoad"
           />
         </div>
       </div>
@@ -207,6 +209,19 @@ export default {
       sessionStorage.removeItem('operations_dni')
       sessionStorage.removeItem('operations_session')
     },
+    handleIframeLoad() {
+      if (this.activeSession && this.$refs.appIframe) {
+        console.log("Admin: Enviando sesión vía postMessage al iframe...");
+        const payload = {
+          type: 'SIFRAH_SUDO_LOGIN',
+          session: this.activeSession,
+          user: this.activeUser,
+          officeId: 'central',
+          path: this.path
+        };
+        this.$refs.appIframe.contentWindow.postMessage(payload, '*');
+      }
+    }
   },
 }
 </script>
