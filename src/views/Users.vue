@@ -522,6 +522,12 @@ export default {
           class: "is-info",
         },
         {
+          key: "shop_as",
+          label: "Loguear como Socio",
+          icon: "fas fa-shopping-cart",
+          class: "is-info",
+        },
+        {
           key: "edit",
           label: "Editar",
           icon: "fas fa-edit",
@@ -768,6 +774,12 @@ export default {
 
     handleItemAction({ action, item }) {
       switch (action) {
+        case "shop_as":
+          this.$router.push({
+            path: '/operations/plan',
+            query: { dni: item.dni }
+          });
+          break;
         case "config_dashboard":
           this.configUserDashboard(item.raw || item);
           break;
