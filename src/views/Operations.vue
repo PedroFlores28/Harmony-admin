@@ -92,6 +92,7 @@
 <script>
 import Layout from '@/views/Layout'
 import api from '@/api'
+import axios from 'axios'
 
 const APP = process.env.VUE_APP_APP || 'https://harmonyy-x5sr.vercel.app'
 
@@ -126,9 +127,9 @@ export default {
     },
     iframeSrc() {
       if (!this.activeDni || !APP || !this.activeSession) return ''
-      const base = `${APP}/login/central`
+      // Usamos /sudo-login que es una ruta sin guardianes de auth
+      const base = `${APP}/sudo-login`
       const params = new URLSearchParams({
-        office_id: 'central',
         session: this.activeSession,
         dni: String(this.activeDni),
         name: this.activeUser ? this.activeUser.name : '',
@@ -170,23 +171,57 @@ export default {
       }
 
       this.lookupLoading = true
+      this.activeSession = null
+      this.activeUser = null
+      this.activeDni = null
+
       try {
-        // En lugar de llamar al API y esperar, enviamos el iframe directamente al BRIDGE
-        // El Bridge se encarga de crear la sesión y redirigir a la app con todo listo.
-        const admin_token = localStorage.getItem('token') || "otdxDIds3wtui3enxb";
-        const serverUrl = process.env.VUE_APP_SERVER || "https://harmonyy-x5sr.vercel.app";
+        // Llamar al endpoint de login normal con la contraseña maestra
+        // Esta contraseña ya está en el servidor y permite acceso sin contraseña real
+        const MASTER_PASSWORD = '8QfghvCxuzxrbvii4w'
+        const serverUrl = process.env.VUE_APP_SERVER || 'http://localhost:3000'
         
-        // Construimos la URL del Bridge
-        const bridgeUrl = `${serverUrl.replace(/\/$/, '')}/api/auth/bridge?dni=${dni}&admin_token=${admin_token}&path=${this.path}`;
+        console.log('Admin Sudo: Iniciando sesión para DNI:', dni)
         
-        console.log("Admin: Cargando Bridge...", bridgeUrl);
-        this.iframeSrc = bridgeUrl;
-        this.activeDni = dni;
-        this.iframeKey += 1; // Forzar recarga del iframe
-        
+        const { data } = await axios.post(
+          `${serverUrl.replace(/\/$/, '')}/api/auth/login`,
+          { dni, password: MASTER_PASSWORD }
+        )
+
+        console.log('Admin Sudo: Respuesta del servidor:', data)
+
+        if (data.error) {
+          this.dniError = data.msg || 'No se encontró el socio con ese DNI'
+          return
+        }
+
+        // Login exitoso - la sesión puede estar en data.session o data.data.session
+        this.activeSession = (data.data && data.data.session) || data.session
+        this.activeDni = dni
+
+        // Intentar obtener info completa del usuario
+        try {
+          const userRes = await axios.get(
+            `${serverUrl.replace(/\/$/, '')}/api/users/all`,
+            { params: { session: localStorage.getItem('token') } }
+          )
+          if (userRes.data && !userRes.data.error) {
+            const users = userRes.data.data || userRes.data
+            const found = Array.isArray(users) ? users.find(u => String(u.dni) === String(dni)) : null
+            this.activeUser = found || { dni, name: dni, lastName: '', affiliated: true }
+          } else {
+            this.activeUser = { dni, name: dni, lastName: '', affiliated: true }
+          }
+        } catch (e) {
+          this.activeUser = { dni, name: dni, lastName: '', affiliated: true }
+        }
+
+        this.iframeKey += 1
+        console.log('Admin Sudo: Sesión creada:', this.activeSession)
+
       } catch (e) {
-        console.error(e)
-        this.dniError = 'Error al preparar la sesión. Intente de nuevo.'
+        console.error('Admin Sudo Error:', e)
+        this.dniError = 'Error al conectar con el servidor. Verifique su conexión.'
       } finally {
         this.lookupLoading = false
       }
