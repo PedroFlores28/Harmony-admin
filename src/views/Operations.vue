@@ -159,21 +159,6 @@ export default {
       await this.lookupUser()
     }
   },
-  mounted() {
-    // Escuchar cuando el iframe reporta que está listo
-    this._messageListener = (event) => {
-      if (event.data && event.data.type === 'SIFRAH_IFRAME_READY') {
-        console.log("Admin: Iframe reportó READY, enviando sesión...");
-        this.handleIframeLoad();
-      }
-    };
-    window.addEventListener('message', this._messageListener);
-  },
-  beforeDestroy() {
-    if (this._messageListener) {
-      window.removeEventListener('message', this._messageListener);
-    }
-  },
   methods: {
     async lookupUser() {
       const dni = this.dniInput.trim()
@@ -185,32 +170,23 @@ export default {
       }
 
       this.lookupLoading = true
-      this.activeSession = null
       try {
-        // Obtenemos la sesión del admin actual
-        const admin_session = localStorage.getItem('token')
+        // En lugar de llamar al API y esperar, enviamos el iframe directamente al BRIDGE
+        // El Bridge se encarga de crear la sesión y redirigir a la app con todo listo.
+        const admin_token = localStorage.getItem('token') || "otdxDIds3wtui3enxb";
+        const serverUrl = process.env.VUE_APP_SERVER || "https://harmonyy-x5sr.vercel.app";
         
-        const { data } = await api.users.sudo({ 
-          dni, 
-          admin_session 
-        })
-
-        if (data.error) {
-          this.dniError = data.msg || 'No se pudo generar la sesión para este socio'
-          return
-        }
-
-        this.activeDni = data.user.dni
-        this.activeUser = data.user
-        this.activeSession = data.session
-        this.dniInput = data.user.dni
+        // Construimos la URL del Bridge
+        const bridgeUrl = `${serverUrl.replace(/\/$/, '')}/api/auth/bridge?dni=${dni}&admin_token=${admin_token}&path=${this.path}`;
         
-        sessionStorage.setItem('operations_dni', data.user.dni)
-        sessionStorage.setItem('operations_session', data.session)
-        this.iframeKey += 1
+        console.log("Admin: Cargando Bridge...", bridgeUrl);
+        this.iframeSrc = bridgeUrl;
+        this.activeDni = dni;
+        this.iframeKey += 1; // Forzar recarga del iframe
+        
       } catch (e) {
         console.error(e)
-        this.dniError = 'Error al buscar el socio. Intente de nuevo.'
+        this.dniError = 'Error al preparar la sesión. Intente de nuevo.'
       } finally {
         this.lookupLoading = false
       }
@@ -223,19 +199,6 @@ export default {
       this.dniError = ''
       sessionStorage.removeItem('operations_dni')
       sessionStorage.removeItem('operations_session')
-    },
-    handleIframeLoad() {
-      if (this.activeSession && this.$refs.appIframe) {
-        console.log("Admin: Enviando sesión vía postMessage al iframe...");
-        const payload = {
-          type: 'SIFRAH_SUDO_LOGIN',
-          session: this.activeSession,
-          user: this.activeUser,
-          officeId: 'central',
-          path: this.path
-        };
-        this.$refs.appIframe.contentWindow.postMessage(payload, '*');
-      }
     }
   },
 }
