@@ -123,7 +123,9 @@ export default {
       const params = new URLSearchParams({
         path: this.path,
         dni: dni,
+        office_id: 'central'
       })
+      
       this.iframeSrc = `${APP}/login/central?${params.toString()}`
       this.iframeKey++
     },
