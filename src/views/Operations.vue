@@ -199,22 +199,20 @@ export default {
         this.activeSession = (data.data && data.data.session) || data.session
         this.activeDni = dni
 
-        // Intentar obtener info completa del usuario
-        try {
-          const userRes = await axios.get(
-            `${serverUrl.replace(/\/$/, '')}/api/users/all`,
-            { params: { session: localStorage.getItem('token') } }
-          )
-          if (userRes.data && !userRes.data.error) {
-            const users = userRes.data.data || userRes.data
-            const found = Array.isArray(users) ? users.find(u => String(u.dni) === String(dni)) : null
-            this.activeUser = found || { dni, name: dni, lastName: '', affiliated: true }
-          } else {
-            this.activeUser = { dni, name: dni, lastName: '', affiliated: true }
-          }
-        } catch (e) {
-          this.activeUser = { dni, name: dni, lastName: '', affiliated: true }
+        // Usar info mínima del usuario (el iframe cargará el resto con la sesión)
+        this.activeUser = { 
+          dni, 
+          name: '', 
+          lastName: '', 
+          affiliated: true  // Default a true, el app verificará con la sesión real
         }
+
+        // Intentar obtener nombre desde el store de la tabla de usuarios (ya cargada en admin)
+        try {
+          const allUsers = this.$store.state.users || []
+          const found = allUsers.find(u => String(u.dni) === String(dni))
+          if (found) this.activeUser = found
+        } catch(e) {}
 
         this.iframeKey += 1
         console.log('Admin Sudo: Sesión creada:', this.activeSession)
