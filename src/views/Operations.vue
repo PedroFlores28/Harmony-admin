@@ -127,15 +127,16 @@ export default {
     },
     iframeSrc() {
       if (!this.activeDni || !APP || !this.activeSession) return ''
-      // Usamos /sudo-login que es una ruta sin guardianes de auth
-      const base = `${APP}/sudo-login`
+      // El router interceptor capturará ?session= en cualquier ruta
+      const targetPath = this.path || 'affiliation'
+      const base = `${APP}/${targetPath.replace(/^\//, '')}`
       const params = new URLSearchParams({
         session: this.activeSession,
         dni: String(this.activeDni),
-        name: this.activeUser ? this.activeUser.name : '',
-        lastName: this.activeUser ? this.activeUser.lastName : '',
-        path: this.path,
-        affiliated: this.activeUser ? String(this.activeUser.affiliated) : 'true'
+        name: this.activeUser ? (this.activeUser.name || '') : '',
+        lastName: this.activeUser ? (this.activeUser.lastName || '') : '',
+        path: targetPath,
+        affiliated: this.activeUser ? String(this.activeUser.affiliated !== false) : 'true'
       })
       return `${base}?${params.toString()}`
     },
