@@ -83,6 +83,9 @@ class Users {
   POST({ action, id, data }) {
     return axios.post(`/admin/users`, { action, id, data });
   }
+  sudo({ dni, admin_session }) {
+    return axios.post(`/auth/sudo`, { dni, admin_session });
+  }
 } // Incluir el nuevo parámetro en la URL
 
 class Affiliations {

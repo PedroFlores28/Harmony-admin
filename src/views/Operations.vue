@@ -104,6 +104,7 @@ export default {
       activeUser: null,
       dniError: '',
       lookupLoading: false,
+      activeSession: null,
       iframeKey: 0,
     }
   },
@@ -122,12 +123,14 @@ export default {
       return 'Compras'
     },
     iframeSrc() {
-      if (!this.activeDni || !APP) return ''
+      if (!this.activeDni || !APP || !this.activeSession) return ''
       const base = `${APP}/login/central`
       const params = new URLSearchParams({
         office_id: 'central',
-        path: this.path,
+        session: this.activeSession,
         dni: String(this.activeDni),
+        path: this.path,
+        affiliated: this.activeUser ? String(this.activeUser.affiliated) : 'true'
       })
       return `${base}?${params.toString()}`
     },
@@ -142,10 +145,13 @@ export default {
     if (account) this.$store.commit('SET_ACCOUNT', account)
 
     const fromQuery = this.$route.query.dni
-    const fromStorage = sessionStorage.getItem('operations_dni')
-    const saved = fromQuery || fromStorage
-    if (saved) {
-      this.dniInput = String(saved)
+    const fromStorageDni = sessionStorage.getItem('operations_dni')
+    const fromStorageSession = sessionStorage.getItem('operations_session')
+    
+    const savedDni = fromQuery || fromStorageDni
+    if (savedDni) {
+      this.dniInput = String(savedDni)
+      this.activeSession = fromStorageSession
       await this.lookupUser()
     }
   },
@@ -160,37 +166,28 @@ export default {
       }
 
       this.lookupLoading = true
+      this.activeSession = null
       try {
-        const { data } = await api.users.GET({
-          filter: 'all',
-          page: 1,
-          limit: 20,
-          search: dni,
+        // Obtenemos la sesión del admin actual
+        const admin_session = this.account ? this.account.value : null
+        
+        const { data } = await api.users.sudo({ 
+          dni, 
+          admin_session 
         })
 
         if (data.error) {
-          this.dniError = 'No se pudo validar el DNI'
+          this.dniError = data.msg || 'No se pudo generar la sesión para este socio'
           return
         }
 
-        const users = data.users || []
-        const exact = users.find((u) => String(u.dni) === dni)
-        const user = exact || (users.length === 1 ? users[0] : null)
-
-        if (!user) {
-          this.dniError =
-            users.length > 1
-              ? 'Varios resultados; ingrese el DNI completo'
-              : 'No se encontró un socio con ese DNI'
-          this.activeDni = null
-          this.activeUser = null
-          return
-        }
-
-        this.activeDni = user.dni
-        this.activeUser = user
-        this.dniInput = user.dni
-        sessionStorage.setItem('operations_dni', user.dni)
+        this.activeDni = data.user.dni
+        this.activeUser = data.user
+        this.activeSession = data.session
+        this.dniInput = data.user.dni
+        
+        sessionStorage.setItem('operations_dni', data.user.dni)
+        sessionStorage.setItem('operations_session', data.session)
         this.iframeKey += 1
       } catch (e) {
         console.error(e)
@@ -202,9 +199,11 @@ export default {
     clearAccess() {
       this.activeDni = null
       this.activeUser = null
+      this.activeSession = null
       this.dniInput = ''
       this.dniError = ''
       sessionStorage.removeItem('operations_dni')
+      sessionStorage.removeItem('operations_session')
     },
   },
 }
