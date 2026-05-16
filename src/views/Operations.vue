@@ -125,6 +125,7 @@ export default {
       if (!this.activeDni || !APP) return ''
       const base = `${APP}/login/central`
       const params = new URLSearchParams({
+        office_id: 'central',
         path: this.path,
         dni: String(this.activeDni),
       })
