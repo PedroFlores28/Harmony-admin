@@ -10,14 +10,35 @@
       </div>
 
       <div class="container operations-container">
-        <div class="access-card">
+        <!-- Compact User Bar when active -->
+        <div v-if="activeUser" class="active-user-bar">
+          <div class="active-user-info">
+            <i class="fas fa-user-circle"></i>
+            <div class="user-details">
+              <span class="user-name">{{ activeUser.name }} {{ activeUser.lastName }}</span>
+              <span class="user-dni">DNI: {{ activeUser.dni }}</span>
+            </div>
+            <span class="active-badge"><i class="fas fa-circle"></i> Sesión Activa</span>
+          </div>
+          <div class="active-actions">
+            <button class="btn-refresh" @click="iframeKey++" title="Recargar App">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="btn-exit" @click="clearAccess">
+              <i class="fas fa-sign-out-alt"></i> Finalizar Sesión
+            </button>
+          </div>
+        </div>
+
+        <!-- Access Card only when NO user is active -->
+        <div v-if="!activeUser" class="access-card fade-in">
           <h2 class="access-title">
             <i class="fas fa-id-card"></i>
             Acceso rápido del socio
           </h2>
           <p class="access-desc">
             Ingrese el DNI para ingresar a la cuenta del socio sin contraseña y
-            realizar compras desde aquí.
+            realizar compras o afiliaciones.
           </p>
 
           <div class="access-form" @submit.prevent="lookupUser">
@@ -28,7 +49,7 @@
                 class="access-input"
                 type="text"
                 inputmode="numeric"
-                placeholder="Buscar por DNI"
+                placeholder="Ej: 71234567"
                 v-model="dniInput"
                 :disabled="lookupLoading"
                 @keydown.enter.prevent="lookupUser"
@@ -46,33 +67,21 @@
           </div>
 
           <p v-if="dniError" class="access-error">{{ dniError }}</p>
-
-          <div v-if="activeUser" class="access-user">
-            <div class="access-user-info">
-              <i class="fas fa-user-check"></i>
-              <span>
-                <strong>{{ activeUser.name }} {{ activeUser.lastName }}</strong>
-                · DNI {{ activeUser.dni }}
-              </span>
-            </div>
-            <button type="button" class="access-change" @click="clearAccess">
-              Cambiar socio
-            </button>
-          </div>
         </div>
 
-        <div v-if="!activeDni" class="access-placeholder">
+        <div v-if="!activeDni" class="access-placeholder fade-in">
           <i class="fas fa-shopping-cart"></i>
-          <p>Ingrese el DNI del socio para abrir su sesión de compras.</p>
+          <p>Ingrese el DNI del socio para abrir su sesión de compras en este panel.</p>
         </div>
 
-        <iframe
-          v-else
-          :key="iframeKey"
-          :src="iframeSrc"
-          class="operations-iframe"
-          title="Sesión de compras del socio"
-        />
+        <div v-else class="iframe-wrapper fade-in">
+          <iframe
+            :key="iframeKey"
+            :src="iframeSrc"
+            class="operations-iframe"
+            title="Sesión de compras del socio"
+          />
+        </div>
       </div>
     </section>
   </Layout>
@@ -203,62 +212,170 @@ export default {
 <style scoped>
 .operations-section {
   min-height: calc(100vh - 60px);
+  background: #fdfafc;
 }
 
 .operations-container {
   padding-bottom: 24px;
 }
 
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Compact User Bar */
+.active-user-bar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(92, 15, 57, 0.08);
+  padding: 12px 24px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #f0e6ec;
+}
+
+.active-user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.active-user-info i {
+  font-size: 2.2rem;
+  color: #5c0f39;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 700;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.user-dni {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.active-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.active-badge i {
+  font-size: 0.5rem;
+  color: #2e7d32;
+}
+
+.active-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-refresh, .btn-exit {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-refresh {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.btn-refresh:hover {
+  background: #e0e0e0;
+}
+
+.btn-exit {
+  background: #fff0f0;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+.btn-exit:hover {
+  background: #ffe5e5;
+}
+
+/* Access Card */
 .access-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(92, 15, 57, 0.08);
-  padding: 20px 24px;
-  margin: 16px 0;
+  box-shadow: 0 4px 20px rgba(92, 15, 57, 0.08);
+  padding: 24px 32px;
+  margin: 24px 0;
   border: 1px solid #f0e6ec;
 }
 
 .access-title {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
+  margin: 0 0 10px;
+  font-size: 1.25rem;
   color: #5c0f39;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  font-weight: 700;
 }
 
 .access-desc {
-  margin: 0 0 16px;
+  margin: 0 0 24px;
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .access-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   align-items: flex-end;
 }
 
 .access-field {
   flex: 1;
-  min-width: 200px;
+  min-width: 250px;
 }
 
 .access-field label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #5c0f39;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .access-input {
   width: 100%;
-  padding: 10px 14px;
+  padding: 12px 16px;
   border: 2px solid #e8dce3;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: border-color 0.2s;
 }
 
 .access-input:focus {
@@ -267,14 +384,21 @@ export default {
 }
 
 .access-btn {
-  padding: 10px 24px;
+  padding: 12px 32px;
   background: #5c0f39;
   color: #fff;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 10px;
+  font-weight: 700;
   cursor: pointer;
-  min-width: 120px;
+  min-width: 140px;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(92, 15, 57, 0.2);
+}
+
+.access-btn:hover:not(:disabled) {
+  background: #751449;
+  transform: translateY(-1px);
 }
 
 .access-btn:disabled {
@@ -283,69 +407,48 @@ export default {
 }
 
 .access-error {
-  color: #c0392b;
-  margin: 12px 0 0;
+  color: #d32f2f;
+  margin: 16px 0 0;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.access-user {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid #f0e6ec;
-}
-
-.access-user-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #333;
-}
-
-.access-user-info i {
-  color: #27ae60;
-  font-size: 1.2rem;
-}
-
-.access-change {
-  background: transparent;
-  border: 1px solid #5c0f39;
-  color: #5c0f39;
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-.access-change:hover {
-  background: #faf5f8;
-}
-
+/* Placeholder */
 .access-placeholder {
   text-align: center;
-  padding: 48px 24px;
+  padding: 80px 40px;
   color: #999;
-  background: #fafafa;
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 16px;
   border: 2px dashed #e8dce3;
 }
 
 .access-placeholder i {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
   color: #be9fb0;
+  opacity: 0.5;
+}
+
+.access-placeholder p {
+  font-size: 1.1rem;
+  color: #888;
+}
+
+/* Iframe Section */
+.iframe-wrapper {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0e6ec;
 }
 
 .operations-iframe {
   width: 100%;
-  height: calc(100vh - 280px);
-  min-height: 500px;
+  height: calc(100vh - 180px);
+  min-height: 700px;
   border: none;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: block;
 }
 </style>
