@@ -129,6 +129,8 @@ export default {
         office_id: 'central',
         session: this.activeSession,
         dni: String(this.activeDni),
+        name: this.activeUser ? this.activeUser.name : '',
+        lastName: this.activeUser ? this.activeUser.lastName : '',
         path: this.path,
         affiliated: this.activeUser ? String(this.activeUser.affiliated) : 'true'
       })
