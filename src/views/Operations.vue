@@ -255,9 +255,9 @@ export default {
         affiliated: String(affiliated)
       });
       
-      // Usar auth-relay.html (mismo dominio) para escribir localStorage sin restricciones
-      const url = `${APP}/auth-relay.html?${params.toString()}`;
-      console.log('Abriendo sesión via relay:', url);
+      // /login detecta ?session= y redirige automáticamente sin mostrar el formulario
+      const url = `${APP}/login?${params.toString()}`;
+      console.log('Abriendo sesión:', url);
       window.open(url, '_blank');
     },
     clearAccess() {
