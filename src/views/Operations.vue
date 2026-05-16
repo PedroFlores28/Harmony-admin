@@ -169,7 +169,7 @@ export default {
       this.activeSession = null
       try {
         // Obtenemos la sesión del admin actual
-        const admin_session = this.account ? this.account.value : null
+        const admin_session = localStorage.getItem('token')
         
         const { data } = await api.users.sudo({ 
           dni, 
