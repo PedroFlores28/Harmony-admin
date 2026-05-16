@@ -159,6 +159,21 @@ export default {
       await this.lookupUser()
     }
   },
+  mounted() {
+    // Escuchar cuando el iframe reporta que está listo
+    this._messageListener = (event) => {
+      if (event.data && event.data.type === 'SIFRAH_IFRAME_READY') {
+        console.log("Admin: Iframe reportó READY, enviando sesión...");
+        this.handleIframeLoad();
+      }
+    };
+    window.addEventListener('message', this._messageListener);
+  },
+  beforeDestroy() {
+    if (this._messageListener) {
+      window.removeEventListener('message', this._messageListener);
+    }
+  },
   methods: {
     async lookupUser() {
       const dni = this.dniInput.trim()
