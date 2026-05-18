@@ -1399,7 +1399,26 @@ export default {
     },
 
     async approve(affiliation) {
-      if (!confirm("¿Desea aprobar esta afiliación?")) return;
+      const result = await Swal.fire({
+        title: "¿Desea aprobar esta afiliación?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, aprobar",
+        cancelButtonText: "Cancelar"
+      });
+
+      if (!result.isConfirmed) return;
+
+      Swal.fire({
+        title: "Procesando...",
+        text: "Por favor espere mientras se aprueba la afiliación.",
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
 
       affiliation.sending = true;
 
@@ -1414,8 +1433,21 @@ export default {
         } else {
           affiliation.status = "approved";
         }
+
+        Swal.fire({
+          icon: "success",
+          title: "¡Aprobada!",
+          text: "La afiliación se ha aprobado correctamente.",
+          timer: 1500,
+          showConfirmButton: false
+        });
       } catch (error) {
         console.error("Error approving affiliation:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Hubo un error al aprobar la afiliación.",
+        });
       } finally {
         affiliation.sending = false;
       }

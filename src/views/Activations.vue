@@ -1392,7 +1392,26 @@ export default {
     },
 
     async approve(activation) {
-      if (!confirm("¿Desea aprobar esta activación?")) return;
+      const result = await Swal.fire({
+        title: "¿Desea aprobar esta activación?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, aprobar",
+        cancelButtonText: "Cancelar"
+      });
+
+      if (!result.isConfirmed) return;
+
+      Swal.fire({
+        title: "Procesando...",
+        text: "Por favor espere mientras se aprueba la activación.",
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
 
       activation.sending = true;
 
@@ -1400,11 +1419,27 @@ export default {
         const { data } = await api.Activations.POST({
           action: "approve",
           id: activation.id,
+          points: activation.points,
         });
 
+        if (data.error) throw new Error(data.error);
+
         activation.status = "approved";
+
+        Swal.fire({
+          icon: "success",
+          title: "¡Aprobada!",
+          text: "La activación se ha aprobado correctamente.",
+          timer: 1500,
+          showConfirmButton: false
+        });
       } catch (error) {
         console.error("Error approving activation:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: error.message || "Hubo un error al aprobar la activación.",
+        });
       } finally {
         activation.sending = false;
       }
