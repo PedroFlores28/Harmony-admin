@@ -1239,6 +1239,11 @@ export default {
         } else {
           mode = "external_only";
         }
+      } else if (record && record.plan && record.plan.amount != null) {
+        paid_virtual = 0;
+        paid_balance = 0;
+        due = Number(record.plan.amount || 0);
+        mode = "external_only";
       } else {
         return { legacyMissing: true };
       }
