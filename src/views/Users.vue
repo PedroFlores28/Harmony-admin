@@ -1102,11 +1102,16 @@ export default {
     },
 
     getPlanLabel(val) {
-      if (val === "basic") return "DISTRIBUIDOR";
-      if (val === "standard" || val === "business") return "EMPRESARIO";
-      if (val === "master") return "MASTER";
-      if (val === "vip") return "VIP";
-      return val ? String(val).toUpperCase() : "";
+      if (!val) return "";
+      const id = typeof val === 'object' ? (val.id || val.plan_id) : val;
+      const name = typeof val === 'object' ? val.name : val;
+      
+      if (id === "basic" || name === "DISTRIBUIDOR" || name === "EJECUTIVO" || name === "Ejecutivo") return "DISTRIBUIDOR";
+      if (id === "standard" || id === "business" || name === "EMPRESARIO" || name === "Empresario" || name === "Distribuidor" || name === "DISTRIBUIDOR (ANTIGUO)") return "EMPRESARIO";
+      if (id === "master" || name === "MASTER" || name === "Master") return "MASTER";
+      if (id === "vip" || name === "VIP" || name === "Vip") return "VIP";
+      
+      return typeof val === 'object' ? (val.name || "Sin membresía").toUpperCase() : String(val).toUpperCase();
     },
 
     async deleteActivation(user) {
