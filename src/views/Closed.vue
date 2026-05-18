@@ -35,8 +35,9 @@
               <tr>
                 <th class="col-num">#</th>
                 <th class="col-name">Nombre</th>
-                <th class="col-points">Pts. grupales</th>
                 <th class="col-personal">Puntos personales</th>
+                <th class="col-points">Pts. grupales</th>
+                <th class="col-directs">Directos activos</th>
                 <th class="col-rank">Rango cerrado</th>
                 <th class="col-bono">Bono logro</th>
                 <th class="col-bono">Bono recalificación</th>
@@ -53,6 +54,7 @@
                   <strong>{{ node.name || '—' }}</strong>
                   <div class="has-text-grey is-size-7">DNI {{ node.dni || '—' }}</div>
                 </td>
+                <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(node)) }}</td>
                 <td class="col-points">
                   <strong>Total: {{ fmtNum(node.total_points) }}</strong>
                   <div class="legs-box" v-if="node._total && node._total.length">
@@ -62,7 +64,7 @@
                     </div>
                   </div>
                 </td>
-                <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(node)) }}</td>
+                <td class="col-directs has-text-centered">{{ hq(node).activos_directos || 0 }}</td>
                 <td class="col-rank">
                   <span class="tag is-warning is-light summary-rank-tag">{{ rankLabel(node.rank) }}</span>
                 </td>
@@ -109,8 +111,9 @@
                 <tr>
                   <th class="col-num">#</th>
                   <th class="col-name">Nombre</th>
-                  <th class="col-points">Pts. grupales</th>
                   <th class="col-personal">Puntos personales</th>
+                  <th class="col-points">Pts. grupales</th>
+                  <th class="col-directs">Directos activos</th>
                   <th class="col-rank">Rango cerrado</th>
                   <th class="col-bono">Bono logro</th>
                   <th class="col-bono">Bono recalificación</th>
@@ -127,6 +130,7 @@
                     <strong>{{ user.name || '—' }}</strong>
                     <div class="has-text-grey is-size-7">DNI {{ user.dni || '—' }}</div>
                   </td>
+                  <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(user)) }}</td>
                   <td class="col-points">
                     <strong>Total: {{ fmtNum(user.total_org) }}</strong>
                     <div class="legs-box" v-if="user.total && user.total.length">
@@ -136,7 +140,7 @@
                       </div>
                     </div>
                   </td>
-                  <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(user)) }}</td>
+                  <td class="col-directs has-text-centered">{{ hqSaved(user).activos_directos || 0 }}</td>
                   <td class="col-rank">
                     <span class="tag is-warning is-light summary-rank-tag">{{ rankLabel(user.rank) }}</span>
                   </td>
@@ -181,7 +185,7 @@ export default {
   },
   computed: {
     qualifiedNodes() {
-      return (this.tree || []).filter((e) => e.rank != 'none')
+      return (this.tree || []).filter((e) => e.activated || e._activated || e.rank != 'none')
     },
     closureStats() {
       const rows = this.qualifiedNodes
@@ -446,6 +450,11 @@ export default {
 .closure-summary-table .col-personal {
   width: 7%;
   min-width: 88px;
+  text-align: center;
+}
+.closure-summary-table .col-directs {
+  width: 7%;
+  min-width: 80px;
   text-align: center;
 }
 .closure-summary-table .col-rank {
