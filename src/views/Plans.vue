@@ -513,21 +513,29 @@ export default {
     tableData() {
       return this.plans
         .filter((plan) => plan && typeof plan === "object")
-        .map((plan, index) => ({
-          id: plan.id || index + 1,
-          plan_id: plan.id || "",
-          name: plan.name || "",
-          amount:
-            plan.amount !== undefined
-              ? parseFloat(plan.amount).toFixed(2)
-              : "0.00",
-          affiliation_points: plan.affiliation_points || 0,
-          n: plan.n || 0,
-          max_products: plan.max_products || 0,
-          kit: plan.kit || 0,
-          img: plan.img || "",
-          raw: plan,
-        }));
+        .map((plan, index) => {
+          let translatedName = plan.name || "";
+          if (plan.id === "basic") translatedName = "DISTRIBUIDOR";
+          if (plan.id === "standard" || plan.id === "business") translatedName = "EMPRESARIO";
+          if (plan.id === "master") translatedName = "MASTER";
+          if (plan.id === "vip") translatedName = "VIP";
+
+          return {
+            id: index + 1,
+            plan_id: plan.id || "",
+            name: translatedName,
+            amount:
+              plan.amount !== undefined
+                ? parseFloat(plan.amount).toFixed(2)
+                : "0.00",
+            affiliation_points: plan.affiliation_points || 0,
+            n: plan.n || 0,
+            max_products: plan.max_products || 0,
+            kit: plan.kit || 0,
+            img: plan.img || "",
+            raw: plan,
+          };
+        });
     },
     totalAmount() {
       return this.plans.reduce(

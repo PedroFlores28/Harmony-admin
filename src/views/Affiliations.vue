@@ -117,8 +117,13 @@
             <span v-else>N/A</span>
           </template>
           <template #cell-plan="{ value }">
-            <span v-if="value && value.name">
-              {{ value.name
+            <span v-if="value && (value.name || value.id)">
+              {{ 
+                value.id === 'basic' ? 'DISTRIBUIDOR' :
+                value.id === 'standard' || value.id === 'business' ? 'EMPRESARIO' :
+                value.id === 'master' ? 'MASTER' :
+                value.id === 'vip' ? 'VIP' :
+                value.name
               }}<span v-if="value.amount"> (S/ {{ value.amount }})</span>
             </span>
             <span v-else>N/A</span>
