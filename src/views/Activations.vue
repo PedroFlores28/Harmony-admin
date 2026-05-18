@@ -3,7 +3,7 @@
     <section class="activations-section">
       <!-- Page Header -->
       <div class="page-header">
-        <div class="container">
+        <div class="container is-fluid">
           <div class="header-content">
             <div class="header-left">
               <h1 class="page-title">{{ title }}</h1>
@@ -32,7 +32,7 @@
       </div>
 
       <!-- Stats Cards -->
-      <div class="container">
+      <div class="container is-fluid">
         <div class="stats-grid">
           <DashboardCard
             :value="totalActivations"
@@ -70,7 +70,7 @@
       </div>
 
       <!-- Modern Table -->
-      <div class="container">
+      <div class="container is-fluid">
         <ModernTable
           :data="tableData"
           :columns="tableColumns"
