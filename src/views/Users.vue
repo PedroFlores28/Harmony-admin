@@ -229,9 +229,10 @@
                 <div class="control">
                   <div class="select is-fullwidth">
                     <select v-model="editingUser.plan">
-                      <option value="basic">EJECUTIVO</option>
-                      <option value="standard">DISTRIBUIDOR</option>
-                      <option value="master">EMPRESARIO</option>
+                      <option value="basic">DISTRIBUIDOR</option>
+                      <option value="standard">EMPRESARIO</option>
+                      <option value="master">MASTER</option>
+                      <option value="vip">VIP</option>
                     </select>
                   </div>
                 </div>
@@ -1101,10 +1102,11 @@ export default {
     },
 
     getPlanLabel(val) {
-      if (val === "basic") return "EJECUTIVO";
-      if (val === "standard") return "DISTRIBUIDOR";
-      if (val === "master") return "EMPRESARIO";
-      return val || "";
+      if (val === "basic") return "DISTRIBUIDOR";
+      if (val === "standard" || val === "business") return "EMPRESARIO";
+      if (val === "master") return "MASTER";
+      if (val === "vip") return "VIP";
+      return val ? String(val).toUpperCase() : "";
     },
 
     async deleteActivation(user) {
