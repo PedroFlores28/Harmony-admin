@@ -9,7 +9,7 @@
         <div class="container">
           <strong>Nuevo cierre de mes</strong>
           <p class="is-size-7 has-text-grey mb-0 mt-2">
-            Lectura en orden: <strong>Persona</strong> → <strong>Rango</strong> (PP solo activaciones, ≥180, niveles residual, compresión) →
+            Lectura en orden: <strong>Persona</strong> → <strong>Rango</strong> (activo = <strong>activated</strong> o PP≥180, sin _activated; al menos uno) →
             <strong>Puntos y red</strong> → <strong>Residual</strong> (total destacado, luego G1–G6+) → <strong>Padre</strong>.
           </p>
         </div>
@@ -264,11 +264,11 @@ export default {
       }
     },
     actividadEtiqueta(n) {
-      const full = !!n.activated
-      const simple = !!n._activated
-      if (full && simple) return 'Full + simple'
-      if (full) return 'Full'
-      if (simple) return 'Simple'
+      const pp = Number((n._harmony_qualification && n._harmony_qualification.pp) ?? n.points ?? 0)
+      const flagAct = !!(n.activated_flag || n.activated)
+      if (flagAct && pp >= 180) return 'Activo (activated + ≥180)'
+      if (flagAct) return 'Activo (activated)'
+      if (pp >= 180) return 'Activo (≥180 pts)'
       return '—'
     },
     residualGen(row, gen) {
