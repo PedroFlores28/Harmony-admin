@@ -25,7 +25,7 @@
             {{ closureStats.filas }} en tabla ·
             Σ residual <strong>S/ {{ closureStats.totalResidual }}</strong> ·
             Prom. S/ {{ closureStats.promedioResidual }} ·
-            Activos full {{ closureStats.activFull }} · simple {{ closureStats.activSimple }}
+            Activos cierre {{ closureStats.activosCierre }} · con rango {{ closureStats.conRango }}
           </div>
         </div>
 
@@ -36,6 +36,7 @@
                 <th class="col-num">#</th>
                 <th class="col-name">Nombre</th>
                 <th class="col-personal">Puntos personales</th>
+                <th class="col-active">Activo cierre</th>
                 <th class="col-points">Pts. grupales</th>
                 <th class="col-directs">Directos activos</th>
                 <th class="col-rank">Rango cerrado</th>
@@ -55,10 +56,11 @@
                   <div class="has-text-grey is-size-7">DNI {{ node.dni || '—' }}</div>
                 </td>
                 <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(node)) }}</td>
+                <td class="col-active">{{ closureActivoCell(node) }}</td>
                 <td class="col-points">
                   <strong>Total: {{ fmtNum(node.total_points) }}</strong>
                   <div class="legs-box" v-if="node._total && node._total.length">
-                    <div v-for="(pts, idx) in node._total" :key="'leg-' + i + '-' + idx" class="leg-row">
+                      <div v-for="(pts, idx) in node._total" :key="'leg-' + i + '-' + idx" class="leg-row">
                       <span>Pierna {{ idx + 1 }}</span>
                       <strong>{{ fmtNum(pts) }} pts</strong>
                     </div>
@@ -83,8 +85,8 @@
         </div>
 
         <p class="is-size-7 has-text-grey">
-          Activos simple: {{ tree.filter(e => e._activated).length }} ·
-          full: {{ tree.filter(e => e.activated).length }} ·
+          Activos cierre: {{ tree.filter(e => e.active).length }} ·
+          _activated (solo info): {{ tree.filter(e => e._activated).length }} ·
           Afiliaciones: {{ affiliations.length }} · Activaciones: {{ activations.length }}
         </p>
         <br>
@@ -112,6 +114,7 @@
                   <th class="col-num">#</th>
                   <th class="col-name">Nombre</th>
                   <th class="col-personal">Puntos personales</th>
+                  <th class="col-active">Activo cierre</th>
                   <th class="col-points">Pts. grupales</th>
                   <th class="col-directs">Directos activos</th>
                   <th class="col-rank">Rango cerrado</th>
@@ -131,6 +134,7 @@
                     <div class="has-text-grey is-size-7">DNI {{ user.dni || '—' }}</div>
                   </td>
                   <td class="col-personal has-text-centered">{{ fmtNum(closurePersonalPoints(user)) }}</td>
+                  <td class="col-active">{{ closureActivoCell(user, true) }}</td>
                   <td class="col-points">
                     <strong>Total: {{ fmtNum(user.total_org) }}</strong>
                     <div class="legs-box" v-if="user.total && user.total.length">
@@ -185,10 +189,11 @@ export default {
   },
   computed: {
     qualifiedNodes() {
-      return (this.tree || []).filter((e) => e.activated || e._activated || e.rank != 'none')
+      return (this.tree || []).filter((e) => e.active || e.rank !== 'none')
     },
     closureStats() {
       const rows = this.qualifiedNodes
+      const tree = this.tree || []
       let total = 0
       for (const n of rows) total += Number(n.residual_bonus || 0)
       const filas = rows.length
@@ -197,8 +202,8 @@ export default {
         filas,
         totalResidual: total.toLocaleString('es-PE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
         promedioResidual: promedio,
-        activFull: (this.tree || []).filter((e) => e.activated).length,
-        activSimple: (this.tree || []).filter((e) => e._activated).length,
+        activosCierre: tree.filter((e) => e.active).length,
+        conRango: rows.filter((e) => e.rank && e.rank !== 'none').length,
       }
     },
     /** Tooltip mientras los bonos viaje/auto/casa no tienen reglas en backend */
@@ -263,13 +268,17 @@ export default {
         return String(arr)
       }
     },
-    actividadEtiqueta(n) {
-      const pp = Number((n._harmony_qualification && n._harmony_qualification.pp) ?? n.points ?? 0)
-      const flagAct = !!(n.activated_flag || n.activated)
-      if (flagAct && pp >= 180) return 'Activo (activated + ≥180)'
-      if (flagAct) return 'Activo (activated)'
+    closureActivoCell(row, saved = false) {
+      const q = saved ? this.hqSaved(row) : this.hq(row)
+      if (q.activo_etiqueta) return q.activo_etiqueta
+      const activo = saved ? row.active : row.active ?? row.activated
+      if (!activo) return 'Inactivo'
+      const pp = Number(q.pp_producto ?? q.pp ?? row.points ?? 0)
+      const flag = !!(q.activated_en_bd ?? row.activated_flag)
+      if (flag && pp >= 180) return 'Activo (activated + ≥180)'
+      if (flag) return 'Activo (activated)'
       if (pp >= 180) return 'Activo (≥180 pts)'
-      return '—'
+      return 'Activo'
     },
     residualGen(row, gen) {
       const arr = row.residual_bonus_arr || []
@@ -451,6 +460,12 @@ export default {
   width: 7%;
   min-width: 88px;
   text-align: center;
+}
+.closure-summary-table .col-active {
+  width: 11%;
+  min-width: 120px;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 .closure-summary-table .col-directs {
   width: 7%;
