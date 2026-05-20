@@ -271,10 +271,15 @@ export default {
     closureActivoCell(row, saved = false) {
       const q = saved ? this.hqSaved(row) : this.hq(row)
       if (q.activo_etiqueta) return q.activo_etiqueta
-      const activo = saved ? row.active : row.active ?? row.activated
+      const activo = saved
+        ? row.active
+        : (row.active != null ? row.active : row.activated)
       if (!activo) return 'Inactivo'
-      const pp = Number(q.pp_producto ?? q.pp ?? row.points ?? 0)
-      const flag = !!(q.activated_en_bd ?? row.activated_flag)
+      const pp = Number(
+        q.pp_producto != null ? q.pp_producto
+          : (q.pp != null ? q.pp : (row.points != null ? row.points : 0))
+      )
+      const flag = !!(q.activated_en_bd != null ? q.activated_en_bd : row.activated_flag)
       if (flag && pp >= 180) return 'Activo (activated + ≥180)'
       if (flag) return 'Activo (activated)'
       if (pp >= 180) return 'Activo (≥180 pts)'
