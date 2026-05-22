@@ -389,8 +389,8 @@ class Periods {
 
 class Boleta {
   get({ id, type }) {
-    const session = localStorage.getItem('session')
-    const params = new URLSearchParams({ id, type: type || 'activation', admin_session: session })
+    const token = localStorage.getItem('token')
+    const params = new URLSearchParams({ id, type: type || 'activation', admin_session: token })
     return axios.get(`/app/boleta?${params.toString()}`)
   }
 }
