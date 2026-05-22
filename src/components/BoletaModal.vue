@@ -201,6 +201,7 @@ export default {
 /* ── Body ── */
 .boleta-admin-body {
   flex: 1;
+  overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }

@@ -12,9 +12,9 @@
       </button>
     </div>
 
-    <!-- Contenedor de la boleta (1080px) -->
-    <div class="boleta-scale-wrapper" ref="scaleWrap">
-      <div class="boleta-card" ref="boletaCard" id="boleta-digital-card">
+    <!-- Contenedor de la boleta (diseño 1080px, escala al ancho disponible) -->
+    <div class="boleta-scale-wrapper" ref="scaleWrap" :style="scaleWrapStyle">
+      <div class="boleta-card" ref="boletaCard" id="boleta-digital-card" :style="cardStyle">
 
         <!-- Cabecera -->
         <div class="boleta-header">
@@ -231,10 +231,41 @@ export default {
   },
   data() {
     return {
-      generating: false
+      generating: false,
+      scale: 0.5,
+      scaledHeight: 0
     }
   },
+  watch: {
+    products: { handler() { this.scheduleScaleUpdate() }, deep: true },
+    orderData: { handler() { this.scheduleScaleUpdate() }, deep: true }
+  },
+  mounted() {
+    this.scheduleScaleUpdate()
+    this._onResize = () => this.scheduleScaleUpdate()
+    window.addEventListener('resize', this._onResize)
+    this.$nextTick(() => {
+      if (typeof ResizeObserver !== 'undefined' && this.$refs.scaleWrap) {
+        this._resizeObserver = new ResizeObserver(() => this.scheduleScaleUpdate())
+        this._resizeObserver.observe(this.$refs.scaleWrap)
+      }
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this._onResize)
+    if (this._resizeObserver) this._resizeObserver.disconnect()
+    if (this._scaleTimer) clearTimeout(this._scaleTimer)
+  },
   computed: {
+    cardStyle() {
+      return {
+        transform: `scale(${this.scale})`
+      }
+    },
+    scaleWrapStyle() {
+      if (!this.scaledHeight) return {}
+      return { height: `${this.scaledHeight}px` }
+    },
     subtotalSinIGV() {
       const total = parseFloat(this.orderData.total) || 0
       return total / 1.18
@@ -272,6 +303,24 @@ export default {
     }
   },
   methods: {
+    scheduleScaleUpdate() {
+      this.$nextTick(() => {
+        if (this._scaleTimer) clearTimeout(this._scaleTimer)
+        this._scaleTimer = setTimeout(() => this.updateScale(), 50)
+      })
+    },
+
+    updateScale() {
+      const wrap = this.$refs.scaleWrap
+      const card = this.$refs.boletaCard
+      if (!wrap || !card) return
+
+      const available = wrap.clientWidth || 540
+      const scale = Math.min(available / 1080, 1)
+      this.scale = scale
+      this.scaledHeight = card.offsetHeight * scale
+    },
+
     formatAmount(val) {
       const n = parseFloat(val) || 0
       return n.toFixed(2)
@@ -284,6 +333,12 @@ export default {
         const jsPDF = (await import('jspdf')).default
 
         const el = this.$refs.boletaCard
+        const prevTransform = el.style.transform
+        const scaleWrap = this.$refs.scaleWrap
+        const prevParentHeight = scaleWrap ? scaleWrap.style.height : undefined
+        el.style.transform = 'none'
+        if (scaleWrap) scaleWrap.style.height = 'auto'
+
         const canvas = await html2canvas(el, {
           scale: 2,
           useCORS: true,
@@ -292,6 +347,12 @@ export default {
           scrollX: 0,
           scrollY: 0
         })
+
+        el.style.transform = prevTransform
+        if (scaleWrap && prevParentHeight !== undefined) {
+          scaleWrap.style.height = prevParentHeight
+        }
+        this.scheduleScaleUpdate()
 
         const imgData = canvas.toDataURL('image/png')
         const pdf = new jsPDF({
@@ -338,8 +399,10 @@ export default {
 
 .boleta-scale-wrapper {
   width: 100%;
-  max-width: 540px; /* mitad de 1080px → escala natural en móvil */
+  max-width: 540px;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
 
 /* ===== BOTONES DE ACCIÓN ===== */
@@ -399,9 +462,7 @@ export default {
   border-radius: 24px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.12);
   overflow: hidden;
-  transform-origin: top center;
-  transform: scale(0.5);
-  margin: -270px auto; /* compensar el espacio del scale */
+  transform-origin: top left;
   font-family: 'Inter', 'Roboto', Arial, sans-serif;
 }
 
@@ -788,40 +849,4 @@ export default {
   transform: scale(1.1);
 }
 
-/* ===== RESPONSIVE: escalar la tarjeta para que quepa en el contenedor ===== */
-@media (max-width: 600px) {
-  .boleta-scale-wrapper {
-    overflow: hidden;
-  }
-
-  .boleta-card {
-    transform: scale(0.35);
-    margin: -351px auto;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-  .boleta-card {
-    transform: scale(0.46);
-    margin: -291px auto;
-  }
-}
-
-@media (min-width: 901px) and (max-width: 1200px) {
-  .boleta-card {
-    transform: scale(0.5);
-    margin: -270px auto;
-  }
-}
-
-@media (min-width: 1201px) {
-  .boleta-scale-wrapper {
-    max-width: 700px;
-  }
-
-  .boleta-card {
-    transform: scale(0.65);
-    margin: -189px auto;
-  }
-}
 </style>
