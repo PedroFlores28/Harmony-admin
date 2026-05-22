@@ -474,6 +474,15 @@
         </div>
       </div>
     </section>
+
+    <!-- Boleta Digital Modal -->
+    <BoletaModal
+      :show="boletaModalVisible"
+      :id="boletaModalId"
+      type="affiliation"
+      @close="boletaModalVisible = false"
+    />
+
   </Layout>
 </template>
 
@@ -481,6 +490,7 @@
 import Layout from "@/views/Layout";
 import DashboardCard from "@/components/DashboardCard";
 import ModernTable from "@/components/ModernTable";
+import BoletaModal from "@/components/BoletaModal";
 import api from "@/api";
 import { debounce } from "lodash";
 import Swal from "sweetalert2";
@@ -559,6 +569,7 @@ export default {
     Layout,
     DashboardCard,
     ModernTable,
+    BoletaModal,
   },
   data() {
     return {
@@ -577,8 +588,10 @@ export default {
       imageModalUrl: "",
       showViewModal: false,
       selectedAffiliation: null,
-      officesList: [], // Lista de oficinas cargadas
-      periodsByKey: {}, // { [key]: periodDoc }
+      officesList: [],
+      periodsByKey: {},
+      boletaModalVisible: false,
+      boletaModalId: null,
 
       // Table configuration
       tableColumns: [
@@ -1367,7 +1380,8 @@ export default {
       } else if (action === "edit") {
         this.editVoucher(affiliation);
       } else if (action === "invoice") {
-        window.open(`${this.INVOICE_ROOT}?id=${affiliation.id}`, "_blank");
+        this.boletaModalId      = affiliation.id
+        this.boletaModalVisible = true
       } else if (action === "cancel") {
         await this.cancelAffiliation(affiliation);
       } else if (action === "revert") {

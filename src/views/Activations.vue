@@ -490,6 +490,15 @@
         </div>
       </div>
     </section>
+
+    <!-- Boleta Digital Modal -->
+    <BoletaModal
+      :show="boletaModalVisible"
+      :id="boletaModalId"
+      type="activation"
+      @close="boletaModalVisible = false"
+    />
+
   </Layout>
 </template>
 
@@ -497,6 +506,7 @@
 import Layout from "@/views/Layout";
 import DashboardCard from "@/components/DashboardCard";
 import ModernTable from "@/components/ModernTable";
+import BoletaModal from "@/components/BoletaModal";
 import api from "@/api";
 import { debounce } from "lodash";
 import Swal from "sweetalert2";
@@ -574,6 +584,7 @@ export default {
     Layout,
     DashboardCard,
     ModernTable,
+    BoletaModal,
   },
   data() {
     return {
@@ -592,8 +603,10 @@ export default {
       imageModalUrl: "",
       showViewModal: false,
       selectedActivation: null,
-      officesList: [], // Lista de oficinas cargadas
-      periodsByKey: {}, // { [key]: periodDoc }
+      officesList: [],
+      periodsByKey: {},
+      boletaModalVisible: false,
+      boletaModalId: null,
 
       // Table configuration
       tableColumns: [
@@ -1354,7 +1367,8 @@ export default {
       } else if (action === "edit") {
         this.editVoucher(activation);
       } else if (action === "invoice") {
-        window.open(`${this.INVOICE_ROOT}?id=${activation.id}`, "_blank");
+        this.boletaModalId      = activation.id
+        this.boletaModalVisible = true
       } else if (action === "delivery") {
         this.selectedActivation = activation;
         this.showViewModal = true;

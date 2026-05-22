@@ -35,6 +35,7 @@ class API {
     deliveryManagement,
     paymentMethods,
     Periods,
+    Boleta,
   }) {
     this.users = users;
     this.Affiliations = Affiliations;
@@ -63,6 +64,7 @@ class API {
     this.deliveryManagement = deliveryManagement;
     this.paymentMethods = paymentMethods;
     this.Periods = Periods;
+    this.Boleta = Boleta;
   }
 }
 
@@ -385,6 +387,14 @@ class Periods {
   }
 }
 
+class Boleta {
+  get({ id, type }) {
+    const session = localStorage.getItem('session')
+    const params = new URLSearchParams({ id, type: type || 'activation', admin_session: session })
+    return axios.get(`/app/boleta?${params.toString()}`)
+  }
+}
+
 export default new API({
   users: new Users(),
   Affiliations: new Affiliations(),
@@ -413,4 +423,5 @@ export default new API({
   deliveryManagement: new DeliveryManagement(),
   paymentMethods: new PaymentMethods(),
   Periods: new Periods(),
+  Boleta: new Boleta(),
 });
