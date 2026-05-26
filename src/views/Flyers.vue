@@ -102,7 +102,7 @@
       </div>
 
       <!-- Add Flyer Modal -->
-      <div class="modal" :class="{ 'is-active': showAddModal }">
+      <div class="modal" :class="{ 'is-active': showAddModal }" v-if="showAddModal">
         <div class="modal-background" @click="showAddModal = false"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -242,7 +242,7 @@
       </div>
 
       <!-- Edit Flyer Modal -->
-      <div class="modal" :class="{ 'is-active': showEditModal }">
+      <div class="modal" :class="{ 'is-active': showEditModal }" v-if="showEditModal">
         <div class="modal-background" @click="closeEditModal"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -605,8 +605,12 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      if (!this.validateFile(file)) {
+      // Clear native file input cache
+      if (event.target) {
         event.target.value = "";
+      }
+
+      if (!this.validateFile(file)) {
         return;
       }
 
@@ -618,8 +622,12 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      if (!this.validateFile(file)) {
+      // Clear native file input cache
+      if (event.target) {
         event.target.value = "";
+      }
+
+      if (!this.validateFile(file)) {
         return;
       }
 
@@ -631,8 +639,12 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      if (!this.validateFile(file)) {
+      // Clear native file input cache
+      if (event.target) {
         event.target.value = "";
+      }
+
+      if (!this.validateFile(file)) {
         return;
       }
 
@@ -644,8 +656,12 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      if (!this.validateFile(file)) {
+      // Clear native file input cache
+      if (event.target) {
         event.target.value = "";
+      }
+
+      if (!this.validateFile(file)) {
         return;
       }
 
