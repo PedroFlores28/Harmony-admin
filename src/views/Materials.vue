@@ -738,20 +738,20 @@ export default {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #fdf2f8;
+  background: #f5eef2;
   padding: 8px 12px;
   border-radius: 8px;
-  border: 1px solid #fbcfe8;
+  border: 1px solid #e8dce3;
   overflow: hidden;
 }
 
 .card-link-container .icon {
-  color: #db2777;
+  color: #5C0F39;
 }
 
 .card-link-text {
   font-size: 12px;
-  color: #db2777;
+  color: #5C0F39;
   font-weight: 500;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -883,7 +883,7 @@ export default {
 
 .upload-dropzone:hover {
   border-color: #450B2B;
-  background-color: #fdf2f8;
+  background-color: #f5eef2;
 }
 
 .upload-dropzone.has-image {

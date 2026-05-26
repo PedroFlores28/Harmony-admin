@@ -96,7 +96,7 @@ export default {
   top: 0;
   left: 60%;
   display: flex;
-  background-color: #9f00ad; /* fondo base */
+  background-color: #5c0f39; /* fondo base */
   border-radius: 0;
   width: fit-content;
   z-index: 1000;
