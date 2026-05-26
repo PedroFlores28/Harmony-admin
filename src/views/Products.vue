@@ -230,11 +230,38 @@
 
               <div class="field">
                 <label class="label">Imagen URL</label>
-                <div class="control">
+                <div class="control" style="margin-bottom: 8px;">
                   <input
                     class="input"
                     v-model="newProduct.img"
                     placeholder="https://ejemplo.com/imagen.jpg"
+                  />
+                </div>
+                <div class="control">
+                  <button
+                    type="button"
+                    class="button is-link is-light"
+                    @click="$refs.fileInputAdd.click()"
+                    :class="{ 'is-loading': uploadingAddImage }"
+                  >
+                    <span class="icon">
+                      <i class="fas fa-upload"></i>
+                    </span>
+                    <span>Subir desde dispositivo</span>
+                  </button>
+                  <input
+                    type="file"
+                    ref="fileInputAdd"
+                    style="display: none"
+                    accept="image/*"
+                    @change="onFileChange($event, 'add')"
+                  />
+                </div>
+                <div v-if="newProduct.img" class="image-preview-box" style="margin-top: 12px; border: 1px solid #e5e7eb; border-radius: 8px; background-color: #f9fafb; padding: 12px; display: flex; justify-content: center; align-items: center; min-height: 150px;">
+                  <img
+                    :src="newProduct.img"
+                    alt="Vista previa del producto"
+                    style="max-height: 180px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
                   />
                 </div>
               </div>
@@ -398,11 +425,38 @@
 
               <div class="field">
                 <label class="label">Imagen URL</label>
-                <div class="control">
+                <div class="control" style="margin-bottom: 8px;">
                   <input
                     class="input"
                     v-model="editingProduct.img"
                     placeholder="https://ejemplo.com/imagen.jpg"
+                  />
+                </div>
+                <div class="control">
+                  <button
+                    type="button"
+                    class="button is-link is-light"
+                    @click="$refs.fileInputEdit.click()"
+                    :class="{ 'is-loading': uploadingEditImage }"
+                  >
+                    <span class="icon">
+                      <i class="fas fa-upload"></i>
+                    </span>
+                    <span>Subir desde dispositivo</span>
+                  </button>
+                  <input
+                    type="file"
+                    ref="fileInputEdit"
+                    style="display: none"
+                    accept="image/*"
+                    @change="onFileChange($event, 'edit')"
+                  />
+                </div>
+                <div v-if="editingProduct.img" class="image-preview-box" style="margin-top: 12px; border: 1px solid #e5e7eb; border-radius: 8px; background-color: #f9fafb; padding: 12px; display: flex; justify-content: center; align-items: center; min-height: 150px;">
+                  <img
+                    :src="editingProduct.img"
+                    alt="Vista previa del producto"
+                    style="max-height: 180px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
                   />
                 </div>
               </div>
@@ -488,6 +542,7 @@ import Layout from "@/views/Layout";
 import DashboardCard from "@/components/DashboardCard";
 import ModernTable from "@/components/ModernTable";
 import api from "@/api";
+import lib from "@/lib";
 import Swal from "sweetalert2";
 
 export default {
@@ -535,6 +590,8 @@ export default {
       validationErrors: {
         type: "",
       },
+      uploadingAddImage: false,
+      uploadingEditImage: false,
 
       // Table configuration
       tableColumns: [
@@ -894,6 +951,7 @@ export default {
         prices: {},
       };
       this.validationErrors = {}; // Clear validation errors
+      this.uploadingAddImage = false;
     },
 
     clearValidationError(field) {
@@ -931,6 +989,7 @@ export default {
 
     closeEditModal() {
       this.showEditModal = false;
+      this.uploadingEditImage = false;
     },
 
     async saveProduct() {
@@ -984,6 +1043,70 @@ export default {
     closeImageModal() {
       this.showImageModal = false;
       this.imageModalUrl = "";
+    },
+
+    async onFileChange(e, mode) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const isEdit = mode === "edit";
+      if (isEdit) {
+        this.uploadingEditImage = true;
+      } else {
+        this.uploadingAddImage = true;
+      }
+
+      // Show temporary local preview
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        if (isEdit) {
+          this.editingProduct.img = event.target.result;
+        } else {
+          this.newProduct.img = event.target.result;
+        }
+      };
+      reader.readAsDataURL(file);
+
+      try {
+        const imgUrl = await lib.upload(file, file.name, "products");
+        console.log("Image uploaded to ImageKit:", imgUrl);
+
+        if (isEdit) {
+          this.editingProduct.img = imgUrl;
+        } else {
+          this.newProduct.img = imgUrl;
+        }
+
+        Swal.fire({
+          icon: "success",
+          title: "¡Éxito!",
+          text: "Imagen subida exitosamente",
+          timer: 1500,
+          showConfirmButton: false,
+        });
+      } catch (error) {
+        console.error("Error uploading image to ImageKit:", error);
+        
+        if (isEdit) {
+          this.editingProduct.img = "";
+        } else {
+          this.newProduct.img = "";
+        }
+
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Error al subir la imagen. Por favor intente de nuevo.",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+      } finally {
+        if (isEdit) {
+          this.uploadingEditImage = false;
+        } else {
+          this.uploadingAddImage = false;
+        }
+      }
     },
   },
 };
