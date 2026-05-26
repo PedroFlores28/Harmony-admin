@@ -11,9 +11,15 @@ const imagekit = new ImageKit({ publicKey, urlEndpoint, authenticationEndpoint }
 
 
 class Lib {
-  upload(file, fileName, dir) {
+  upload(file, fileName, dir, options = {}) {
+    const prefix = options.prefix ? String(options.prefix) : 'material'
+    const safeName = String(fileName || 'image')
+      .replace(/[^a-zA-Z0-9._-]/g, '_')
+      .replace(/\.+/g, '.')
+    const uniqueName = `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safeName}`
+
     return new Promise((resolve, reject) => {
-      imagekit.upload({ file, fileName, folder: `${folder}/${dir}` }, (err, result) => {
+      imagekit.upload({ file, fileName: uniqueName, folder: `${folder}/${dir}` }, (err, result) => {
         if(err) reject(err)
         resolve(result.url)
       })

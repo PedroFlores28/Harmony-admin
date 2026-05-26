@@ -117,7 +117,7 @@
       </div>
 
       <!-- Add Product Modal -->
-      <div class="modal" :class="{ 'is-active': showAddModal }" v-if="showAddModal">
+      <div class="modal" :class="{ 'is-active': showAddModal }">
         <div class="modal-background" @click="showAddModal = false"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -317,7 +317,7 @@
       </div>
 
       <!-- Edit Product Modal -->
-      <div class="modal" :class="{ 'is-active': showEditModal }" v-if="showEditModal">
+      <div class="modal" :class="{ 'is-active': showEditModal }">
         <div class="modal-background" @click="closeEditModal"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -1105,10 +1105,6 @@ export default {
           this.uploadingEditImage = false;
         } else {
           this.uploadingAddImage = false;
-        }
-        // Clear native input value safely after upload has finished/failed to allow selecting the same file again
-        if (e && e.target) {
-          e.target.value = "";
         }
       }
     },

@@ -49,10 +49,10 @@
         </div>
 
         <div v-else class="materials-grid">
-          <div v-for="material in materials" :key="material.id" class="material-card">
+          <div v-for="material in materials" :key="materialKey(material)" class="material-card">
             <!-- Thumbnail Cover Image -->
             <div class="card-cover">
-              <img v-if="material.img" :src="material.img" alt="Portada de material" />
+              <img v-if="material.img" :src="material.img" :alt="material.title" />
               <div v-else class="cover-placeholder">
                 <i class="fas fa-file-pdf"></i>
               </div>
@@ -90,7 +90,7 @@
       </div>
 
       <!-- Add Material Modal -->
-      <div class="modal" :class="{ 'is-active': showAddModal }" v-if="showAddModal">
+      <div class="modal" :class="{ 'is-active': showAddModal }">
         <div class="modal-background" @click="showAddModal = false"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -181,7 +181,7 @@
       </div>
 
       <!-- Edit Material Modal -->
-      <div class="modal" :class="{ 'is-active': showEditModal }" v-if="showEditModal">
+      <div class="modal" :class="{ 'is-active': showEditModal }">
         <div class="modal-background" @click="closeEditModal"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -310,6 +310,15 @@ export default {
     this.load();
   },
   methods: {
+    materialKey(material) {
+      return material && (material.id || material._id);
+    },
+
+    resetFileInputs() {
+      if (this.$refs.fileInputAdd) this.$refs.fileInputAdd.value = "";
+      if (this.$refs.fileInputEdit) this.$refs.fileInputEdit.value = "";
+    },
+
     async load() {
       this.loading = true;
       try {
@@ -336,6 +345,8 @@ export default {
         link: "",
         img: "",
       };
+      this.uploadingAddImage = false;
+      this.resetFileInputs();
       this.showAddModal = true;
     },
 
@@ -351,10 +362,18 @@ export default {
       }
 
       try {
-        await api.materials.POST({
+        const { data } = await api.materials.POST({
           action: "add",
           data: this.newMaterial,
         });
+
+        if (data.error) {
+          throw new Error(data.msg || "Error al registrar el material");
+        }
+
+        if (data.materials) {
+          this.materials = data.materials;
+        }
         
         Swal.fire({
           icon: "success",
@@ -365,7 +384,7 @@ export default {
         });
         
         this.showAddModal = false;
-        this.load();
+        if (!data.materials) this.load();
       } catch (err) {
         console.error("Error adding material:", err);
         Swal.fire({
@@ -377,19 +396,39 @@ export default {
     },
 
     openEditModal(material) {
+      if (!material || !material.id) {
+        Swal.fire({
+          icon: "warning",
+          title: "Material inválido",
+          text: "No se pudo identificar el material. Recarga la página e intenta de nuevo.",
+          confirmButtonColor: "#450B2B",
+        });
+        return;
+      }
+
       this.editingMaterial = {
         id: material.id,
-        title: material.title,
-        description: material.description,
-        link: material.link,
+        title: material.title || "",
+        description: material.description || "",
+        link: material.link || "",
         img: material.img || "",
       };
+      this.uploadingEditImage = false;
+      this.resetFileInputs();
       this.showEditModal = true;
     },
 
     closeEditModal() {
       this.showEditModal = false;
       this.uploadingEditImage = false;
+      this.editingMaterial = {
+        id: "",
+        title: "",
+        description: "",
+        link: "",
+        img: "",
+      };
+      this.resetFileInputs();
     },
 
     async saveMaterial() {
@@ -404,11 +443,24 @@ export default {
       }
 
       try {
-        await api.materials.POST({
+        const { data } = await api.materials.POST({
           action: "edit",
           id: this.editingMaterial.id,
-          data: this.editingMaterial,
+          data: {
+            title: this.editingMaterial.title,
+            description: this.editingMaterial.description,
+            link: this.editingMaterial.link,
+            img: this.editingMaterial.img,
+          },
         });
+
+        if (data.error) {
+          throw new Error(data.msg || "Error al actualizar el material");
+        }
+
+        if (data.materials) {
+          this.materials = data.materials;
+        }
 
         Swal.fire({
           icon: "success",
@@ -419,7 +471,7 @@ export default {
         });
 
         this.closeEditModal();
-        this.load();
+        if (!data.materials) this.load();
       } catch (err) {
         console.error("Error updating material:", err);
         Swal.fire({
@@ -445,10 +497,18 @@ export default {
       if (!result.isConfirmed) return;
 
       try {
-        await api.materials.POST({
+        const { data } = await api.materials.POST({
           action: "delete",
           id: material.id,
         });
+
+        if (data.error) {
+          throw new Error(data.msg || "No se pudo eliminar el material");
+        }
+
+        if (data.materials) {
+          this.materials = data.materials;
+        }
 
         Swal.fire({
           icon: "success",
@@ -458,7 +518,7 @@ export default {
           showConfirmButton: false,
         });
 
-        this.load();
+        if (!data.materials) this.load();
       } catch (err) {
         console.error("Error deleting material:", err);
         Swal.fire({
@@ -474,11 +534,26 @@ export default {
       if (!file) return;
 
       const isEdit = mode === "edit";
+      const materialId = isEdit ? this.editingMaterial.id : "new";
+
+      if (isEdit && !materialId) {
+        Swal.fire({
+          icon: "warning",
+          title: "Material inválido",
+          text: "Cierra el modal y vuelve a abrir el material que deseas editar.",
+          confirmButtonColor: "#450B2B",
+        });
+        this.resetFileInputs();
+        return;
+      }
+
       if (isEdit) {
         this.uploadingEditImage = true;
       } else {
         this.uploadingAddImage = true;
       }
+
+      const previousImg = isEdit ? this.editingMaterial.img : this.newMaterial.img;
 
       // Show temporary preview
       const reader = new FileReader();
@@ -492,7 +567,9 @@ export default {
       reader.readAsDataURL(file);
 
       try {
-        const imgUrl = await lib.upload(file, file.name, "materials");
+        const imgUrl = await lib.upload(file, file.name, "materials", {
+          prefix: `material-${materialId}`,
+        });
         
         if (isEdit) {
           this.editingMaterial.img = imgUrl;
@@ -511,9 +588,9 @@ export default {
         console.error("Error uploading material cover to ImageKit:", error);
         
         if (isEdit) {
-          this.editingMaterial.img = "";
+          this.editingMaterial.img = previousImg || "";
         } else {
-          this.newMaterial.img = "";
+          this.newMaterial.img = previousImg || "";
         }
 
         Swal.fire({
@@ -529,10 +606,7 @@ export default {
         } else {
           this.uploadingAddImage = false;
         }
-        // Clear native input value safely after upload has finished/failed to allow selecting the same file again
-        if (e && e.target) {
-          e.target.value = "";
-        }
+        this.resetFileInputs();
       }
     },
   },
