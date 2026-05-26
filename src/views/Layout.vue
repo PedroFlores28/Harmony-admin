@@ -152,6 +152,18 @@
                 <span>Banner</span>
               </a>
 
+              <!-- Materiales -->
+              <a
+                class="navbar-item"
+                href="/materials"
+                v-if="accountType === 'admin'"
+              >
+                <span class="icon">
+                  <i class="fas fa-folder-open"></i>
+                </span>
+                <span>Materiales</span>
+              </a>
+
               <!-- Flyers -->
 
               <!-- Network -->

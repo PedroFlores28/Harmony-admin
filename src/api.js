@@ -36,6 +36,7 @@ class API {
     paymentMethods,
     Periods,
     Boleta,
+    materials,
   }) {
     this.users = users;
     this.Affiliations = Affiliations;
@@ -65,6 +66,7 @@ class API {
     this.paymentMethods = paymentMethods;
     this.Periods = Periods;
     this.Boleta = Boleta;
+    this.materials = materials;
   }
 }
 
@@ -142,6 +144,15 @@ class Products {
   }
   POST(data) {
     return axios.post(`/admin/products`, data);
+  }
+}
+
+class Materials {
+  GET() {
+    return axios.get(`/admin/materials`);
+  }
+  POST(data) {
+    return axios.post(`/admin/materials`, data);
   }
 }
 
@@ -424,4 +435,5 @@ export default new API({
   paymentMethods: new PaymentMethods(),
   Periods: new Periods(),
   Boleta: new Boleta(),
+  materials: new Materials(),
 });

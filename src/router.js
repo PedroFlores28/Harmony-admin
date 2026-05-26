@@ -33,6 +33,7 @@ import PaymentMethods from "./views/PaymentMethods.vue";
 import DashboardConfig from "./views/DashboardConfig.vue";
 import Flyers from "./views/Flyers.vue";
 import Periods from "./views/Periods.vue";
+import Materials from "./views/Materials.vue";
 
 // import Reports      from './views/Reports.vue'
 
@@ -206,6 +207,11 @@ const routes = [
   {
     path: "/flyers",
     component: Flyers,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/materials",
+    component: Materials,
     meta: { requiresAuth: true },
   },
 ];
