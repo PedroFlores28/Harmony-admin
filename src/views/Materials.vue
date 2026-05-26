@@ -133,26 +133,33 @@
             </div>
 
             <div class="field">
-              <label class="label">Imagen de portada (URL)</label>
-              <div class="control mb-2">
-                <input
-                  class="input"
-                  v-model="newMaterial.img"
-                  placeholder="https://ejemplo.com/imagen.jpg"
-                />
-              </div>
+              <label class="label">Imagen de portada <span class="required">*</span></label>
               <div class="control">
-                <button
-                  type="button"
-                  class="button is-link is-light"
+                <div 
+                  class="upload-dropzone" 
+                  :class="{ 'has-image': newMaterial.img }"
                   @click="$refs.fileInputAdd.click()"
-                  :class="{ 'is-loading': uploadingAddImage }"
                 >
-                  <span class="icon">
-                    <i class="fas fa-upload"></i>
-                  </span>
-                  <span>Subir desde dispositivo</span>
-                </button>
+                  <div v-if="uploadingAddImage" class="spinner-dropzone">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                  <template v-else-if="newMaterial.img">
+                    <img :src="newMaterial.img" alt="Portada" class="dropzone-preview" />
+                    <div class="dropzone-overlay">
+                      <span class="icon"><i class="fas fa-sync-alt"></i></span>
+                      <span>Cambiar imagen</span>
+                    </div>
+                  </template>
+                  <template v-else>
+                    <div class="dropzone-placeholder">
+                      <span class="icon is-large" style="margin-bottom: 8px;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: #450B2B;"></i>
+                      </span>
+                      <span style="font-weight: 500; color: #450B2B; font-size: 1.1rem; display: block;">Subir imagen</span>
+                    </div>
+                  </template>
+                </div>
                 <input
                   type="file"
                   ref="fileInputAdd"
@@ -160,9 +167,6 @@
                   accept="image/*"
                   @change="onFileChange($event, 'add')"
                 />
-              </div>
-              <div v-if="newMaterial.img" class="image-preview-container">
-                <img :src="newMaterial.img" alt="Vista previa de portada" />
               </div>
             </div>
           </section>
@@ -220,26 +224,33 @@
             </div>
 
             <div class="field">
-              <label class="label">Imagen de portada (URL)</label>
-              <div class="control mb-2">
-                <input
-                  class="input"
-                  v-model="editingMaterial.img"
-                  placeholder="https://ejemplo.com/imagen.jpg"
-                />
-              </div>
+              <label class="label">Imagen de portada <span class="required">*</span></label>
               <div class="control">
-                <button
-                  type="button"
-                  class="button is-link is-light"
+                <div 
+                  class="upload-dropzone" 
+                  :class="{ 'has-image': editingMaterial.img }"
                   @click="$refs.fileInputEdit.click()"
-                  :class="{ 'is-loading': uploadingEditImage }"
                 >
-                  <span class="icon">
-                    <i class="fas fa-upload"></i>
-                  </span>
-                  <span>Subir desde dispositivo</span>
-                </button>
+                  <div v-if="uploadingEditImage" class="spinner-dropzone">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                  </div>
+                  <template v-else-if="editingMaterial.img">
+                    <img :src="editingMaterial.img" alt="Portada" class="dropzone-preview" />
+                    <div class="dropzone-overlay">
+                      <span class="icon"><i class="fas fa-sync-alt"></i></span>
+                      <span>Cambiar imagen</span>
+                    </div>
+                  </template>
+                  <template v-else>
+                    <div class="dropzone-placeholder">
+                      <span class="icon is-large" style="margin-bottom: 8px;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: #450B2B;"></i>
+                      </span>
+                      <span style="font-weight: 500; color: #450B2B; font-size: 1.1rem; display: block;">Subir imagen</span>
+                    </div>
+                  </template>
+                </div>
                 <input
                   type="file"
                   ref="fileInputEdit"
@@ -247,9 +258,6 @@
                   accept="image/*"
                   @change="onFileChange($event, 'edit')"
                 />
-              </div>
-              <div v-if="editingMaterial.img" class="image-preview-container">
-                <img :src="editingMaterial.img" alt="Vista previa de portada" />
               </div>
             </div>
           </section>
@@ -332,11 +340,11 @@ export default {
     },
 
     async addMaterial() {
-      if (!this.newMaterial.title || !this.newMaterial.description || !this.newMaterial.link) {
+      if (!this.newMaterial.title || !this.newMaterial.description || !this.newMaterial.link || !this.newMaterial.img) {
         Swal.fire({
           icon: "warning",
           title: "Campos incompletos",
-          text: "El título, descripción y enlace son obligatorios.",
+          text: "El título, descripción, enlace e imagen de portada son obligatorios.",
           confirmButtonColor: "#450B2B",
         });
         return;
@@ -385,11 +393,11 @@ export default {
     },
 
     async saveMaterial() {
-      if (!this.editingMaterial.title || !this.editingMaterial.description || !this.editingMaterial.link) {
+      if (!this.editingMaterial.title || !this.editingMaterial.description || !this.editingMaterial.link || !this.editingMaterial.img) {
         Swal.fire({
           icon: "warning",
           title: "Campos incompletos",
-          text: "El título, descripción y enlace son obligatorios.",
+          text: "El título, descripción, enlace e imagen de portada son obligatorios.",
           confirmButtonColor: "#450B2B",
         });
         return;
@@ -774,6 +782,94 @@ export default {
   .header-actions {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Upload Dropzone styles */
+.upload-dropzone {
+  border: 2px dashed #cbd5e1;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 16px;
+}
+
+.upload-dropzone:hover {
+  border-color: #450B2B;
+  background-color: #fdf2f8;
+}
+
+.upload-dropzone.has-image {
+  border-style: solid;
+  padding: 0;
+}
+
+.dropzone-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dropzone-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(69, 11, 43, 0.75);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.upload-dropzone:hover .dropzone-overlay {
+  opacity: 1;
+}
+
+/* Spinner Dropzone */
+.spinner-dropzone {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #450B2B;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  animation-delay: -1.0s;
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
   }
 }
 </style>
