@@ -1049,11 +1049,6 @@ export default {
       const file = e.target.files[0];
       if (!file) return;
 
-      // Clear the native input value so that the change event triggers again even if the same file is selected
-      if (e.target) {
-        e.target.value = "";
-      }
-
       const isEdit = mode === "edit";
       if (isEdit) {
         this.uploadingEditImage = true;
@@ -1110,6 +1105,10 @@ export default {
           this.uploadingEditImage = false;
         } else {
           this.uploadingAddImage = false;
+        }
+        // Clear native input value safely after upload has finished/failed to allow selecting the same file again
+        if (e && e.target) {
+          e.target.value = "";
         }
       }
     },

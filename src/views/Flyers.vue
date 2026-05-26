@@ -605,12 +605,8 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      // Clear native file input cache
-      if (event.target) {
-        event.target.value = "";
-      }
-
       if (!this.validateFile(file)) {
+        event.target.value = "";
         return;
       }
 
@@ -622,12 +618,8 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      // Clear native file input cache
-      if (event.target) {
-        event.target.value = "";
-      }
-
       if (!this.validateFile(file)) {
+        event.target.value = "";
         return;
       }
 
@@ -639,12 +631,8 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      // Clear native file input cache
-      if (event.target) {
-        event.target.value = "";
-      }
-
       if (!this.validateFile(file)) {
+        event.target.value = "";
         return;
       }
 
@@ -656,12 +644,8 @@ export default {
       const file = event.target.files[0];
       if (!file) return;
 
-      // Clear native file input cache
-      if (event.target) {
-        event.target.value = "";
-      }
-
       if (!this.validateFile(file)) {
+        event.target.value = "";
         return;
       }
 
