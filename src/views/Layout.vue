@@ -132,7 +132,7 @@
               <a 
                 class="navbar-item" 
                 href="/delivery-management"
-                v-if="accountType === 'admin'"
+                v-if="false"
               >
                 <span class="icon">
                   <i class="fas fa-truck"></i>
@@ -232,18 +232,12 @@
               </div>
 
               <!-- Operations Menu -->
-              <div
-                class="navbar-item menu-trigger"
-                @click="toggleMenu('operations')"
-              >
+              <a class="navbar-item" href="/operations/plan">
                 <span class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </span>
                 <span>Compras</span>
-                <span class="icon is-small">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </div>
+              </a>
 
               <!-- Closures -->
               <router-link
@@ -422,20 +416,7 @@
           </a>
         </div>
 
-        <div v-if="activeMenu === 'operations'" class="menu-items">
-          <a class="menu-item" href="/operations/plan" @click="closeMenu">
-            <span class="icon">
-              <i class="fas fa-handshake"></i>
-            </span>
-            <span>Nueva Afiliación</span>
-          </a>
-          <a class="menu-item" href="/operations/products" @click="closeMenu">
-            <span class="icon">
-              <i class="fas fa-box"></i>
-            </span>
-            <span>Reconsumo de Productos</span>
-          </a>
-        </div>
+
       </div>
     </div>
   </div>
@@ -497,8 +478,7 @@ export default {
           return "Pagos";
         case "offices":
           return "Oficinas";
-        case "operations":
-          return "Compras";
+
         default:
           return "Menú";
       }
