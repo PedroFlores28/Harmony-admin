@@ -2,9 +2,9 @@
   <main class="section" style="max-width: 500px; margin: auto">
 
     <div class="field">
-      <label class="label">Email</label>
+      <label class="label">Usuario</label>
       <div class="control has-icons-left">
-        <input class="input" type="email" placeholder="Email"
+        <input class="input" type="text" placeholder="Usuario"
           v-model="email"
           :class="{'is-danger': error.email}"
           @keydown="reset('email')">
@@ -61,7 +61,7 @@ export default {
   },
   filters: {
     alert(msg) {
-      if (msg == 'invalid email')   return 'Email incorrecto'
+      if (msg == 'invalid email')   return 'Usuario incorrecto'
       if (msg == 'invalid password') return 'Contraseña incorrecta'
       if (msg == 'invalid account') return 'Cuenta incorrecta'
     },
